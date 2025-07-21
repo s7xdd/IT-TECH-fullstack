@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Swiper Pagination - Custom Box Loading Style */
+#hero-slider .swiper-pagination {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    position: absolute !important;
+    bottom: 16px !important;
+}
+
+/* Default Pagination Box */
+#hero-slider .swiper-pagination-bullet {
+    width: 24px !important;
+    /* Default width */
+    height: 4px !important;
+    /* Box shape instead of dots */
+    background-color: #d1d5db !important;
+    /* Gray-300 */
+    border-radius: 0px !important;
+    transition: all 0.5s ease-in-out !important;
+}
+
+/* Active Pagination Box */
+#hero-slider .swiper-pagination-bullet-active {
+    width: 32px !important;
+    /* Slightly wider for active */
+    background-color: #41B6E8 !important;
+    /* Primary color */
+}
+
+
+#hero-slider .swiper-button-prev:after,
+#hero-slider .swiper-button-next:after {
+    font-size: 20px !important;
+}
+
+
+
+
+/* Hover Effect for Category Images */
+#categories-section .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the circle */
+    border-radius: 9999px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#categories-section .swiper-slide:hover img {
+    transform: scale(1.05);
+}
+
+/* Border Hover Effect */
+#categories-section .swiper-slide .relative {
+    border: 1px solid #fff; /* Default border color */
+    transition: border-color 0.3s ease-in-out;
+}
+
+#categories-section .swiper-slide:hover .relative {
+    border-color: #41B6E8; /* Change border color on hover */
+}
+
+
+
+.drop-down-menus[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+  }
+  
+  .drop-down-menus[aria-expanded="false"] svg {
+    transform: rotate(0deg);
+  }
+  
+  .transition-transform {
+    transition: transform 0.3s;
+  }
+
+
+  .technical_specs table{
+    width: 100%!important;
+  }
+  
+
+  .product-thumbs-swiper .swiper-slide-thumb-active {
+    border: 2px solid #41b6e8;
+    border-radius: 8px;
+}
+
+.product-thumbs-swiper .swiper-slide {
+width: 80px!important;
+}
+
+    /* Optional: Customize styles for the drawer and overlay */
+    #drawer-menu {
+        transition: transform 0.3s ease;
+        transform: translateX(-100%);
+      }
+      #drawer-menu.open {
+        transform: translateX(0);
+      }

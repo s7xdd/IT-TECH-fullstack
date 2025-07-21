@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Luxe Uno';
+    src: url('./fonts/luxe-uno/LuxeUno-Thin.woff2') format('woff2'),
+        url('./fonts/luxe-uno/LuxeUno-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Luxe Uno';
+    src: url('./fonts/luxe-uno/LuxeUno-Light.woff2') format('woff2'),
+        url('./fonts/luxe-uno/LuxeUno-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Luxe Uno';
+    src: url('./fonts/luxe-uno/LuxeUno-Regular.woff2') format('woff2'),
+        url('./fonts/luxe-uno/LuxeUno-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Luxe Uno';
+    src: url('./fonts/luxe-uno/LuxeUno-SemiBold.woff2') format('woff2'),
+        url('./fonts/luxe-uno/LuxeUno-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Luxe Uno';
+    src: url('./fonts/luxe-uno/LuxeUno-Bold.woff2') format('woff2'),
+        url('./fonts/luxe-uno/LuxeUno-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aspekta';
+    src: url('./fonts/aspekta/Aspekta-Thin.woff2') format('woff2'),
+        url('./fonts/aspekta/Aspekta-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aspekta';
+    src: url('./fonts/aspekta/Aspekta-Light.woff2') format('woff2'),
+        url('./fonts/aspekta/Aspekta-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aspekta';
+    src: url('./fonts/aspekta/Aspekta-Regular.woff2') format('woff2'),
+        url('./fonts/aspekta/Aspekta-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aspekta';
+    src: url('./fonts/aspekta/Aspekta-SemiBold.woff2') format('woff2'),
+        url('./fonts/aspekta/Aspekta-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aspekta';
+    src: url('./fonts/aspekta/Aspekta-Bold.woff2') format('woff2'),
+        url('./fonts/aspekta/Aspekta-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --primary: #134A98;
+    --secondary: #5DB2E3;
+    --dark: #404040;
+    --white: #FFFFFF;
+    --font-luxe: 'Luxe Uno', sans-serif;
+    --font-aspekta: 'Aspekta', sans-serif;
+}
+
+
+body {
+    font-family: var(--font-luxe);
+    color: var(--dark);
+    background-color: var(--white);
+}
+
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 1.25;
+    margin-top: 1.75rem;
+    margin-bottom: 0.875rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+    line-height: 1.3;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    line-height: 1.35;
+    margin-top: 1.25rem;
+    margin-bottom: 0.625rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+ul,
+ol {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+
+/* custom style */
+
+.lt-learn-more a span:first-child {
+    opacity: 0;
+}
+
+.lt-learn-more:hover a span:first-child {
+    opacity: 1 !important;
+}
+
+.lt-learn-more a:hover span:last-child {
+    transform: rotate(180deg);
+    color: black;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 18px !important;
+    color: black;
+}
+
+.circle {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 9999;
+    transition:
+        background-color 0.3s ease,
+        border 0.3s ease,
+        transform 0.3s ease,
+        opacity 0.3s ease;
+    will-change: transform, background-color, border;
+}
+
+.circle.filled {
+    background-color: var(--secondary);
+    border: none;
+    transform: translate(-50%, -50%) scale(0.6);
+}
+
+#hamburger-menu .top-line {
+    top: 10px;
+}
+
+#hamburger-menu .middle-line {
+    top: 18px;
+}
+
+#hamburger-menu .bottom-line {
+    top: 26px;
+}
+
+#hamburger-menu.is-open .top-line {
+    transform: rotate(45deg);
+    top: 19px;
+}
+
+#hamburger-menu.is-open .middle-line {
+    opacity: 0;
+}
+
+#hamburger-menu.is-open .bottom-line {
+    transform: rotate(-45deg);
+    top: 19px;
+}
+
+
+.gradient-text {
+    background-image: linear-gradient(to bottom right, #FFFFFF, #134A98);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
