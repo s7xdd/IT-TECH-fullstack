@@ -19,14 +19,14 @@
             </p>
 
             <div class="flex sm:flex-row justify-center gap-4 font-[--aspekta] px-4 sm:px-0">
-                <button
+                <a href="services.index"
                     class="bg-white text-base whitespace-nowrap sm:text-lg text-[--dark] px-6 py-3 sm:px-6 xl:py-4 rounded-full hover:bg-gray-100 sm:w-auto">
                     {{ $page->getTranslation('heading1', $lang) }}
-                </button>
-                <button
+                </a>
+                <a href="contact"
                     class="bg-transparent whitespace-nowrap transition-all duration-150 text-base sm:text-lg border border-white text-white px-6 py-3 sm:px-6 xl:py-4 rounded-full hover:bg-white hover:text-blue-800 sm:w-auto">
                     {{ $page->getTranslation('heading2', $lang) }}
-                </button>
+                </a>
             </div>
 
         </div>
