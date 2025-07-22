@@ -6,8 +6,6 @@
 
     @php
         $serviceCustomFields = json_decode($service->custom_fields);
-        $whyChooseUsFields = json_decode(get_setting('why_choose_us'), true) ?? [];
-
     @endphp
 
 
@@ -74,21 +72,26 @@
 
                         <div class="grid grid-cols-1 gap-3">
 
-                            @foreach ($serviceCustomFields as $idx => $customField)
-                                <div
-                                    class="grid grid-cols-12 gap-4 sm:gap-6 md:gap-6 bg-gray-100 p-4 sm:p-6 md:p-10 hover:bg-[#5DB2E3]/20 duration-150">
-                                    <div class="col-span-12 md:col-span-1 flex items-center justify-start md:justify-start">
-                                        {{ $idx + 1 }}.
-                                    </div>
-                                    <div class="col-span-12 md:col-start-2 md:col-end-6 text-xl text-gray-900 my-auto">
-                                        {{ $customField->title ?? '' }}
-                                    </div>
+                            @for ($i = 1; $i <= 6; $i++)
+                                @if (
+                                    !empty($service->getTranslation('feature_title_' . $i, $lang)) ||
+                                        !empty($service->getTranslation('feature_content_' . $i, $lang)))
                                     <div
-                                        class="col-span-12 md:col-start-6 md:col-end-13 text-base sm:text-lg text-gray-700">
-                                        {{ $customField->content ?? '' }}
+                                        class="grid grid-cols-12 gap-4 sm:gap-6 md:gap-6 bg-gray-100 p-4 sm:p-6 md:p-10 hover:bg-[#5DB2E3]/20 duration-150">
+                                        <div
+                                            class="col-span-12 md:col-span-1 flex items-center justify-start md:justify-start">
+                                            {{ $i }}.
+                                        </div>
+                                        <div class="col-span-12 md:col-start-2 md:col-end-6 text-xl text-gray-900 my-auto">
+                                            {{ $service->getTranslation('feature_title_' . $i, $lang) }}
+                                        </div>
+                                        <div
+                                            class="col-span-12 md:col-start-6 md:col-end-13 text-base sm:text-lg text-gray-700">
+                                            {{ $service->getTranslation('feature_content_' . $i, $lang) }}
+                                        </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endif
+                            @endfor
                         </div>
                     </div>
                 </section>
@@ -113,25 +116,29 @@
 
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    @foreach ($whyChooseUsFields as $field)
-                        <div class="swiper-slide">
-                            <div class="bg-white p-8 text-center space-y-10 transition-shadow border border-[--dark]">
-                                <div class="w-fit mx-auto my-6">
-                                    <img class="w-16" src="{{ uploaded_asset($field['image']) }}"
-                                        alt="{{ $field['title'] }}">
+                    @for ($i = 1; $i <= 6; $i++)
+                        @php
+                            $title = get_setting('why_choose_us_title' . $i);
+                            $content = get_setting('why_choose_us_subtitle' . $i);
+                            $image = get_setting('why_choose_us_image' . $i);
+                        @endphp
+                        @if ($title || $content || $image)
+                            <div class="swiper-slide">
+                                <div class="bg-white p-8 text-center space-y-10 transition-shadow border border-[--dark]">
+                                    <div class="w-fit mx-auto my-6">
+                                        <img class="w-16" src="{{ uploaded_asset($image) }}" alt="{{ $title }}">
+                                    </div>
+                                    <div class="">
+                                        <h3 class="text-xl text-gray-800 my-4">{{ $title ?? '' }}</h3>
+                                        <p class="text-gray-600">{{ $content ?? '' }}</p>
+                                    </div>
                                 </div>
-                                <div class="">
-                                    <h3 class="text-xl text-gray-800 my-4">{{ $field['title'] }}</h3>
-                                    <p class="text-gray-600">{{ $field['subtitle'] }}</p>
-                                </div>
-
                             </div>
-                        </div>
-                    @endforeach
+                        @endif
+                    @endfor
+                    <div class="swiper-pagination mt-8 relative"></div>
                 </div>
-                <div class="swiper-pagination mt-8 relative"></div>
             </div>
-        </div>
     </section>
 
     <section class="py-16 px-6 ...">
@@ -191,16 +198,18 @@
                         </p>
                         <ul class="space-y-3 text-base text-gray-700 mb-5">
 
-                            @foreach ($serviceCustomFields as $idx => $customField)
-                                <li class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[--secondary] mr-2"
-                                        viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                    <span>{{ $customField->title }}</span>
-                                </li>
+                            @foreach (range(1, 6) as $i)
+                                @if (!empty($service->getTranslation('feature_title_' . $i, $lang)))
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[--secondary] mr-2"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span>{{ $service->getTranslation('feature_title_' . $i, $lang) }}</span>
+                                    </li>
+                                @endif
                             @endforeach
                         </ul>
                         <a href="{{ route('services.show', $service->slug) }}"

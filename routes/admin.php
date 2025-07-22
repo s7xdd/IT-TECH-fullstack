@@ -107,10 +107,6 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/all-notification', [NotificationController::class, 'index'])->name('admin.all-notification');
 
-    // Categories
-    Route::get('/generate-slug', [CategoryController::class, 'generateSlug'])->name('generate-slug');
-    Route::resource('categories', CategoryController::class)->except(['destroy']);
-
     Route::post('/business-settings/update', [BusinessSettingsController::class, 'update'])->name('business_settings.update');
 
     Route::get('/service/all', [ServiceController::class, 'index'])->name('service.index');
@@ -151,26 +147,5 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     Route::get('/configuration', [BusinessSettingsController::class, 'shipping_configuration'])->name('shipping_configuration.index');
-    Route::post('/shipping_configuration/free_shipping', [BusinessSettingsController::class, 'freeshipping_settings'])->name('shipping_configuration.free_shipping');
-    Route::post('/configuration/return', [BusinessSettingsController::class, 'return_settings'])->name('configuration.return_settings');
-
     Route::post('/configuration/service', [BusinessSettingsController::class, 'service_settings'])->name('configuration.service_settings');
-
-    //Reports
-    Route::get('/stock_report', [ReportController::class, 'stock_report'])->name('stock_report.index');
-    Route::get('/export-stock-report', [ReportController::class, 'exportStockReport'])->name('export.stock_report');
-
-    Route::get('/in_house_sa le_report', [ReportController::class, 'in_house_sale_report'])->name('in_house_sale_report.index');
-
-    Route::get('/wish_report', [ReportController::class, 'wish_report'])->name('wish_report.index');
-    Route::get('/export-wish-report', [ReportController::class, 'exportWishReport'])->name('export.wish_report');
-
-    Route::get('/user_search_report', [ReportController::class, 'user_search_report'])->name('user_search_report.index');
-    Route::get('/export-search-report', [ReportController::class, 'exportSearchReport'])->name('export.search_report');
-
-    Route::get('/abandoned-cart', [AbandonedCartController::class, 'index'])->name('abandoned-cart.index');
-    Route::get('/{cart}/abandoned-cart', [AbandonedCartController::class, 'view'])->name('abandoned-cart.view');
-    Route::get('/sales_report', [ReportController::class, 'sales_report'])->name('sales_report.index');
-    Route::get('/sales_orders/{id}/show', [ReportController::class, 'sales_orders_show'])->name('sales_orders.show');
-    Route::get('/export-sales-report', [ReportController::class, 'exportSalesReport'])->name('export.sales_report');
 });

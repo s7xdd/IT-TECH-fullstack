@@ -144,13 +144,35 @@
                         </div>
                     </div> --}}
 
+                    <h5 class="mb-0 h6">Features</h5>
+                    <hr>
 
-                    @include('components.inputs.custom-fields', [
-                        'custom_fields' => $custom_fields,
-                        'field_name' => 'custom_fields',
-                        'fields' => ['title', 'content'],
-                        'label' => 'Custom Fields (Max 6)',
-                    ])
+                    @for ($i = 1; $i <= 6; $i++)
+                        <div class="form-group d-flex flex-wrap">
+                            <div class="col-md-6 mb-2">
+                                <label class="col-form-label">Title {{ $i }}</label>
+                                <input type="text" placeholder="Title {{ $i }}"
+                                    id="title{{ $i }}" name="title{{ $i }}"
+                                    value="{{ $service->getTranslation('feature_title_' . $i, $lang) }}" class="form-control">
+                                @error('title{{ $i }}')
+                                    <div class="alert alert-danger mt-1">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="col-md-6 mb-2">
+                                <label class="col-form-label">Content {{ $i }}</label>
+                                <input type="text" placeholder="Content {{ $i }}"
+                                    value="{{ $service->getTranslation('feature_content_' . $i, $lang) }}" id="content{{ $i }}"
+                                    name="content{{ $i }}" class="form-control">
+                                @error('content{{ $i }}')
+                                    <div class="alert alert-danger mt-1">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                    @endfor
+
+                    <hr>
+
 
                     @if ($lang == 'en')
                         <div class="form-group  row">

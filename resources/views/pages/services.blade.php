@@ -49,10 +49,6 @@
 
                 @forelse($services as $service)
 
-                    @php
-                        $serviceCustomFields = json_decode($service->custom_fields) ?? [];
-                    @endphp
-
                     <div
                         class="bg-white border border-gray-400 hover:border-[--dark] p-6 transform transition-all duration-300 hover:scale-102 hover:shadow-xl hover:-translate-y-3">
                         <div class="w-14 h-14 rounded-full bg-[--primary] flex items-center justify-center mb-5 shadow-md">
@@ -70,17 +66,21 @@
                         </p>
                         <ul class="space-y-3 text-base text-gray-700 mb-5">
 
-                            @foreach ($serviceCustomFields as $idx => $customField)
-                                <li class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[--secondary] mr-2"
-                                        viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                    <span>{{ $customField->title }}</span>
-                                </li>
-                            @endforeach
+                            @for ($i = 1; $i <= 6; $i++)
+                                @if (
+                                    !empty($service->getTranslation('feature_title_' . $i, $lang)) ||
+                                        !empty($service->getTranslation('feature_content_' . $i, $lang)))
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[--secondary] mr-2"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span>{{ $service->getTranslation('feature_title_' . $i, $lang) }}</span>
+                                    </li>
+                                @endif
+                            @endfor
                         </ul>
                         <a href="{{ route('services.show', $service->slug) }}"
                             class="mt-auto border border-[--dark] rounded-full px-6 py-3 text-[--dark] hover:bg-[--primary] transition hover:text-white hover:border-[--primary] w-max">

@@ -67,6 +67,12 @@ class ServiceController extends Controller
         $service->save();
 
         $service_translation = ServiceTranslation::firstOrNew(['lang' => env('DEFAULT_LANGUAGE'), 'service_id' => $service->id]);
+
+        for ($i = 1; $i <= 6; $i++) {
+            $service_translation->{"feature_title_{$i}"} = $request->input("title{$i}");
+            $service_translation->{"feature_content_{$i}"} = $request->input("content{$i}");
+        }
+
         $service_translation->name = $request->name;
         $service_translation->short_description = $request->short_description;
         $service_translation->description = $request->description;
@@ -125,6 +131,10 @@ class ServiceController extends Controller
         }
 
         $service_translation = ServiceTranslation::firstOrNew(['lang' => $request->lang, 'service_id' => $service->id]);
+        for ($i = 1; $i <= 6; $i++) {
+            $service_translation->{"feature_title_{$i}"} = $request->input("title{$i}");
+            $service_translation->{"feature_content_{$i}"} = $request->input("content{$i}");
+        }
         $service_translation->name = $request->name;
         $service_translation->description = $request->description;
         $service_translation->short_description = $request->short_description;

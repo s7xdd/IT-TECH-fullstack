@@ -747,3 +747,14 @@ function checkCartProduct($sku, $slug){
         }
     }
 }
+
+  function custom_field_value($custom, $fname)
+    {
+        if (is_array($custom)) {
+            return $custom[$fname] ?? '';
+        } elseif (is_object($custom)) {
+            return $custom->$fname ?? '';
+        } else {
+            return '';
+        }
+    }

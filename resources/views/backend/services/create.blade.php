@@ -112,11 +112,31 @@
                             </div>
                         </div> --}}
 
-                        @include('components.inputs.custom-fields', [
-                            'field_name' => 'custom_fields',
-                            'fields' => ['title', 'content'],
-                            'label' => 'Custom Fields (Max 6)',
-                        ])
+                        <h5 class="mb-0 h6">Features</h5>
+                        <hr>
+                        @for ($i = 1; $i <= 6; $i++)
+                            <div class="form-group d-flex flex-wrap">
+                                <div class="col-md-6 mb-2">
+                                    <label class="col-form-label">Title {{ $i }}</label>
+                                    <input type="text" placeholder="Title {{ $i }}"
+                                        id="title{{ $i }}" name="title{{ $i }}"
+                                        class="form-control">
+                                    @error('title{{ $i }}')
+                                        <div class="alert alert-danger mt-1">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <label class="col-form-label">Content {{ $i }}</label>
+                                    <input type="text" placeholder="Content {{ $i }}"
+                                        id="content{{ $i }}" name="content{{ $i }}"
+                                        class="form-control">
+                                    @error('content{{ $i }}')
+                                        <div class="alert alert-danger mt-1">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                        @endfor
 
                         <div class="form-group row">
                             <label class="col-md-2 col-form-label">{{ trans('messages.active_status') }}</label>

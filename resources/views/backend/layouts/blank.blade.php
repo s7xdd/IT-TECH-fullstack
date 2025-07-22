@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg" href="{{ asset('assets/img/favicon.ico') }}">
+    <link rel="icon" type="image/svg" href="{{ asset('assets/img/favicon.png') }}">
 	<title>{{ env('APP_NAME') }}</title>
     <!-- google font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700">

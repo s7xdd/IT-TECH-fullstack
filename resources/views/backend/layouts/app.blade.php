@@ -37,26 +37,26 @@
     <script>
         var AIZ = AIZ || {};
         AIZ.local = {
-            nothing_selected: '{!!  trans('messages.nothing_selected') !!}',
-            nothing_found: '{!!  trans('messages.nothing_found') !!}',
-            choose_file: '{{  trans('messages.choose_file') }}',
-            file_selected: '{{  trans('messages.file_selected') }}',
-            files_selected: '{{  trans('messages.files_selected') }}',
-            add_more_files: '{{  trans('messages.add_more_files') }}',
-            adding_more_files: '{{  trans('messages.adding_more_files') }}',
-            drop_files_here_paste_or: '{{  trans('messages.drop_files_here_paste_or') }}',
-            browse: '{{  trans('messages.browse') }}',
-            upload_complete: '{{  trans('messages.upload_complete') }}',
-            upload_paused: '{{  trans('messages.upload_paused') }}',
-            resume_upload: '{{  trans('messages.resume_upload') }}',
-            pause_upload: '{{  trans('messages.pause_upload') }}',
-            retry_upload: '{{  trans('messages.retry_upload') }}',
-            cancel_upload: '{{  trans('messages.cancel_upload') }}',
-            uploading: '{{  trans('messages.uploading') }}',
-            processing: '{{  trans('messages.processing') }}',
-            complete: '{{  trans('messages.complete') }}',
-            file: '{{  trans('messages.file') }}',
-            files: '{{  trans('messages.files') }}',
+            nothing_selected: '{!! trans('messages.nothing_selected') !!}',
+            nothing_found: '{!! trans('messages.nothing_found') !!}',
+            choose_file: '{{ trans('messages.choose_file') }}',
+            file_selected: '{{ trans('messages.file_selected') }}',
+            files_selected: '{{ trans('messages.files_selected') }}',
+            add_more_files: '{{ trans('messages.add_more_files') }}',
+            adding_more_files: '{{ trans('messages.adding_more_files') }}',
+            drop_files_here_paste_or: '{{ trans('messages.drop_files_here_paste_or') }}',
+            browse: '{{ trans('messages.browse') }}',
+            upload_complete: '{{ trans('messages.upload_complete') }}',
+            upload_paused: '{{ trans('messages.upload_paused') }}',
+            resume_upload: '{{ trans('messages.resume_upload') }}',
+            pause_upload: '{{ trans('messages.pause_upload') }}',
+            retry_upload: '{{ trans('messages.retry_upload') }}',
+            cancel_upload: '{{ trans('messages.cancel_upload') }}',
+            uploading: '{{ trans('messages.uploading') }}',
+            processing: '{{ trans('messages.processing') }}',
+            complete: '{{ trans('messages.complete') }}',
+            file: '{{ trans('messages.file') }}',
+            files: '{{ trans('messages.files') }}',
         }
     </script>
 
@@ -86,6 +86,7 @@
     <script src="{{ asset('assets/js/aiz-core.js') }}"></script>
 
     @yield('script')
+    @stack('scripts')
 
     <script type="text/javascript">
         @foreach (session('flash_notification', collect())->toArray() as $message)
@@ -110,6 +111,8 @@
         //     });
         // }
 
+
+
         function menuSearch() {
             var filter, item;
             filter = $("#menu-search").val().toUpperCase();
@@ -130,12 +133,12 @@
                         const link = $(items[i]).attr('href');
                         $("#search-menu").append(
                             `<li class="aiz-side-nav-item"><a href="${link}" class="aiz-side-nav-link"><i class="las la-ellipsis-h aiz-side-nav-icon"></i><span>${text}</span></a></li`
-                            );
+                        );
                     }
                 } else {
                     $("#search-menu").html(
-                        `<li class="aiz-side-nav-item"><span	class="text-center text-muted d-block">{{  trans('messages.Nothing Found') }}</span></li>`
-                        );
+                        `<li class="aiz-side-nav-item"><span	class="text-center text-muted d-block">{{ trans('messages.Nothing Found') }}</span></li>`
+                    );
                 }
             } else {
                 $("#main-menu").removeClass('d-none');

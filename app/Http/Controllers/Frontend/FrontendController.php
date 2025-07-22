@@ -266,7 +266,7 @@ class FrontendController extends Controller
     {
         $lang = getActiveLanguage();
         $services =  Service::where('status', 1)->where('slug', $slug)->first();
-        $latestServices = Service::where('status', 1)->orderBy('sort_order', 'ASC')->limit(3)->get();
+        $latestServices = Service::where('status', 1)->where('slug', '!=', $slug)->orderBy('sort_order', 'ASC')->limit(3)->get();
         $faq_categories = FaqCategory::with(['faq_list'])->where('slug', 'services')->first()->orderBy('sort_order', 'asc')->get();
 
         return view('pages.service-details', ['service' => $services, 'lang' => $lang, 'faq_categories' => $faq_categories, 'latestServices' => $latestServices]);
