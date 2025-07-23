@@ -47,8 +47,7 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                @forelse($services as $service)
-
+                @foreach ($services as $service)
                     <div
                         class="bg-white border border-gray-400 hover:border-[--dark] p-6 transform transition-all duration-300 hover:scale-102 hover:shadow-xl hover:-translate-y-3">
                         <div class="w-14 h-14 rounded-full bg-[--primary] flex items-center justify-center mb-5 shadow-md">
@@ -87,6 +86,7 @@
                             Learn More
                         </a>
                     </div>
+                @endforeach
 
             </div>
         </div>
