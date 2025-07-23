@@ -61,11 +61,6 @@
             <p class="text-gray-700 text-lg font-semibold mb-2">Loading...</p>
             <img src="{{ asset('assets/images/spinner.gif') }}" alt="Loading" class="w-20 h-20" />
         </div>
-
-        <div id="no-more-data" style="display: none;"
-            class=" text-center text-gray-600 text-lg font-semibold mt-4 p-3  rounded-lg ">
-            No more blogs available.
-        </div>
     </section>
 
 

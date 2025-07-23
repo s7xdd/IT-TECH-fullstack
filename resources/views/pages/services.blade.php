@@ -88,12 +88,6 @@
                         </a>
                     </div>
 
-                @empty
-                    <div class="col-span-full text-center text-gray-600 text-lg mt-6">
-                        🚨 No services available at the moment.
-                    </div>
-                @endforelse
-
             </div>
         </div>
     </section>

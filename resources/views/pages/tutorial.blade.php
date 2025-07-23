@@ -6,7 +6,7 @@
     <section class="py-16 px-6 sm:py-20 md:px-6 lg:px-0 md:py-24 lg:py-24 xl:py-24 relative z-10 mt-[84px]">
         <div class="flex lg:w-5/6 mx-auto">
             <div class="max-w-xl">
-                <span class="bg-gray-200 rounded-full py-2 px-3">Our Services</span>
+                <span class="bg-gray-200 rounded-full py-2 px-3">Tutorials</span>
                 <h1 class="responsive-heading my-4">
                      @php
                         $text = $page->getTranslation('title', $lang);
@@ -58,11 +58,6 @@
             class="fixed inset-0 flex flex-col items-center justify-center bg-white bg-opacity-70 z-50">
             <p class="text-gray-700 text-lg font-semibold mb-2">Loading...</p>
             <img src="{{ asset('assets/images/spinner.gif') }}" alt="Loading" class="w-20 h-20" />
-        </div>
-
-        <div id="no-more-data" style="display: none;"
-            class=" text-center text-gray-600 text-lg font-semibold mt-4 p-3 rounded-lg">
-            No more tutorials available.
         </div>
 
     </section>
