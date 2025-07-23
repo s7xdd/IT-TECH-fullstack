@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Frontend\FrontendController;
@@ -14,6 +15,8 @@ Route::get('/load-more-services', [FrontendController::class, 'loadMoreService']
 Route::get('/news/', [FrontendController::class, 'blogs'])->name('blog');
 Route::get('/load-more-blogs', [FrontendController::class, 'loadMoreBlogs'])->name('blog.loadMore');
 Route::get('/blog/{slug}', [FrontendController::class, 'showBlog'])->name('blog.details');
+
+Route::get('/generate-slug', [CategoryController::class, 'generateSlug'])->name('generate-slug');
 
 Route::get('/tutorials', [FrontendController::class, 'tutorials'])->name('tutorial.index');
 Route::get('/load-more-tutorials', [FrontendController::class, 'loadMoreTutorials'])->name('tutorial.loadMore');
