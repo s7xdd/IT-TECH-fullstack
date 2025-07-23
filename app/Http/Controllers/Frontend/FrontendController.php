@@ -114,23 +114,39 @@ class FrontendController extends Controller
         ];
 
         $this->loadSEO($seo);
-
         $data['slider'] = HomeSlider::where('status', 1)->orderBy('sort_order', 'asc')->get();
 
-        $data['home_categories'] = Category::whereIn('id', json_decode(get_setting('home_categories')))->where('is_active', 1)
+        $data['home_categories'] = Category::where('is_active', 1)
+            ->whereIn('id', json_decode(get_setting('home_categories') ?? '[]'))
             ->get();
 
-        $data['home_products'] = Product::where('published', 1)->whereIn('id', json_decode(get_setting('home_products')))->with('brand')->get();
+        $data['home_products'] = Product::where('published', 1)
+            ->whereIn('id', json_decode(get_setting('home_products') ?? '[]'))
+            ->with('brand')
+            ->get();
 
-        $data['home_services'] = Service::where('status', 1)->whereIn('id', json_decode(get_setting('home_services')))->orderBy('sort_order', 'asc')->get();
+        $data['home_services'] = Service::where('status', 1)
+            ->whereIn('id', json_decode(get_setting('home_services') ?? '[]'))
+            ->orderBy('sort_order', 'asc')
+            ->get();
 
-        $data['partners'] = Partners::where('status', 1)->orderBy('sort_order', 'asc')->get();
+        $data['partners'] = Partners::where('status', 1)
+            ->orderBy('sort_order', 'asc')
+            ->get();
 
-        $data['testimonials'] = Testimonials::where('status', 1)->orderBy('sort_order', 'asc')->get();
+        $data['testimonials'] = Testimonials::where('status', 1)
+            ->orderBy('sort_order', 'asc')
+            ->get();
 
-        $data['blogs'] = Blog::where('status', 1)->orderBy('blog_date', 'desc')->limit(5)->get();
+        $data['blogs'] = Blog::where('status', 1)
+            ->orderBy('blog_date', 'desc')
+            ->limit(5)
+            ->get();
 
-        $data['tutorials'] = Tutorial::where('status', 1)->orderBy('tutorial_date', 'desc')->limit(5)->get();
+        $data['tutorials'] = Tutorial::where('status', 1)
+            ->orderBy('tutorial_date', 'desc')
+            ->limit(5)
+            ->get();
 
         // return view('frontend.home',compact('page','data','lang'));
 
