@@ -49,7 +49,7 @@
 
 
                 <div class="form-group row">
-                    <label class="col-sm-2 col-from-label" for="sub_heading1">Detials Heading <span
+                    <label class="col-sm-2 col-from-label" for="sub_heading1">Details Heading <span
                             class="text-danger">*</span> </label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" placeholder="Enter.." name="heading2" value="{{ $page->getTranslation('heading2', $lang) }}">

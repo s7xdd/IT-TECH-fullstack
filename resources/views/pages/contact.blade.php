@@ -27,10 +27,10 @@
                     <div class="flex flex-col items-start space-y-6">
                         <div class="flex flex-col">
                             <span class="text-gray-400">Call us directly?</span>
-                            <a href="tel:+12345678910"
-                                class="text-gray-600 text-xl hover:text-[--dark] hover:underline underline-offset-1">+1234
-                                567
-                                8910</a>
+                            <a href="tel:{{ $page->getTranslation('heading3', $lang) }}"
+                                class="text-gray-600 text-xl hover:text-[--dark] hover:underline underline-offset-1">
+                                {{ $page->getTranslation('heading3', $lang) }}
+                            </a>
                         </div>
                         <div class="h-0.5 bg-gray-200 w-full"></div>
                         <div class="flex flex-col">
