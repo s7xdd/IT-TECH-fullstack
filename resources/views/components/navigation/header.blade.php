@@ -45,7 +45,7 @@
                                                 {{-- <img src="{{ uploaded_asset($service['icon']) }}"
                                                     alt="{{ $service->name }} Icon"
                                                     class="h-8 w-8 object-contain rounded mb-0"> --}}
-                                                <span class="font-medium">{{ $service->name }}</span>
+                                                <span class="font-medium text-center">{{ $service->name }}</span>
                                             </a>
                                         </li>
                                     @endforeach
