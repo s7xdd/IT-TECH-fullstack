@@ -27,9 +27,9 @@ class HomeSliderController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'banner' => 'required',
-            'mobile_banner' => 'required',
-            'link_type' => 'required',
+            // 'banner' => 'required',
+            // 'mobile_banner' => 'required',
+            // 'link_type' => 'required',
             'status' => 'required',
             'link' => 'nullable|required_if:link_type,external',
             'link_ref_id' => 'nullable|required_if:link_type,product,category',
@@ -75,9 +75,9 @@ class HomeSliderController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'banner' => 'required',
-            'mobile_banner' => 'required',
-            'link_type' => 'required',
+            // 'banner' => 'required',
+            // 'mobile_banner' => 'required',
+            // 'link_type' => 'required',
             'status' => 'required',
             'link' => 'nullable|required_if:link_type,external',
             'link_ref_id' => 'nullable|required_if:link_type,product,category',
