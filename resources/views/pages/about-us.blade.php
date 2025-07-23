@@ -26,7 +26,8 @@
         <div class="flex flex-col lg:flex-row items-center lg:w-5/6 mx-auto gap-12">
             <div class="w-full lg:w-1/2 px-10">
                 <div class="w-full bg-gray-200 h-[400px] mx-auto">
-
+                    <img src="{{ asset($page->image) }}" alt="About Us Image"
+                        class="w-full h-full object-cover">
                 </div>
             </div>
             <div class="w-full lg:w-1/2">
@@ -96,12 +97,7 @@
                         $page->getTranslation('content5', $lang),
                         $page->getTranslation('content6', $lang),
                     ];
-                    $icons = [
-                        $page->getTranslation('image1', $lang),
-                        $page->getTranslation('image2', $lang),
-                        $page->getTranslation('image3', $lang),
-                        $page->getTranslation('image4', $lang),
-                    ];
+                    $icons = [$page->image1, $page->image2, $page->image3, $page->image4];
                 @endphp
                 @foreach ($headings as $i => $heading)
                     <div

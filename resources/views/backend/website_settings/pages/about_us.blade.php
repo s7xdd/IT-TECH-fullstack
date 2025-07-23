@@ -37,28 +37,9 @@
                             value="{{ $page->getTranslation('title', $lang) }}" required>
                     </div>
                 </div>
-
-                {{-- <div class="form-group row">
-                    <label class="col-sm-2 col-from-label" for="name">Subtitle <span
-                            class="text-danger">*</span> </label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="Enter.." name="sub_title" value="{{ $page->getTranslation('sub_title', $lang) }}" required>
-                    </div>
-                </div> --}}
-
-
                 <div class="form-group row">
                     <h5 class="mb-0 ml-3">Who We Are Section</h5>
                 </div>
-
-                {{-- <div class="form-group row">
-                    <label class="col-sm-2 col-from-label" for="name">{{ trans('messages.heading') }} <span
-                            class="text-danger">*</span> </label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="Enter.." name="heading1"
-                            value="{{ $page->getTranslation('heading1', $lang) }}" required>
-                    </div>
-                </div> --}}
 
                 <div class="form-group row">
                     <label class="col-sm-2 col-from-label" for="name">{{ trans('messages.content') }} <span
@@ -71,23 +52,19 @@
                 </div>
 
                 <div class="form-group row @if ($lang != 'en') d-none @endif">
-                    <label class="col-md-2 col-form-label" for="signinSrEmail">{{ trans('messages.images') }}</label>
+                    <label class="col-md-2 col-form-label" for="signinSrEmail">{{ trans('messages.image') }}</label>
                     <div class="col-md-10">
-                        <input type="file" name="image" class="form-control" accept="image/*">
+                        <input type="file" name="image" class="form-control selected-files" accept="image/*">
 
-                        @if ($page->image)
-                            <div class="file-preview box sm">
+                        <div class="file-preview box sm">
+                            @if ($page->image)
                                 <div class="d-flex justify-content-between align-items-center mt-2 file-preview-item">
                                     <div class="align-items-center align-self-stretch d-flex justify-content-center thumb">
                                         <img src="{{ asset($page->image) }}" class="img-fit">
                                     </div>
-                                    <div class="remove">
-                                        <button class="btn btn-link" data-url="{{ $page->image }}" type="button">
-                                            x</button>
-                                    </div>
                                 </div>
-                            </div>
-                        @endif
+                            @endif
+                        </div>
                     </div>
                 </div>
 
@@ -110,20 +87,6 @@
                         <textarea class=" form-control" placeholder="Enter.." name="content1" rows="5" required>{!! $page->getTranslation('content1', $lang) !!}</textarea>
                     </div>
                 </div>
-
-                {{-- <div class="form-group row">
-                    <h5 class="mb-0 ml-3">Our Vision Section</h5>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-sm-2 col-from-label" for="name">{{ trans('messages.heading') }} <span
-                            class="text-danger">*</span> </label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="Enter.." name="heading3" value="{{ $page->getTranslation('heading3', $lang) }}" required>
-                    </div>
-                </div>
-
-                 --}}
 
                 <div class="form-group row">
                     <h5 class="mb-0 ml-3">About Us Section</h5>
@@ -149,8 +112,7 @@
 
                 <hr>
                 <div class="form-group row">
-                    <label class="col-sm-2 col-from-label" for="name">Title 1 <span
-                            class="text-danger">*</span></label>
+                    <label class="col-sm-2 col-from-label" for="name">Title 1 <span class="text-danger">*</span></label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" placeholder="Enter.." name="heading5"
                             value="{{ old('heading5', $page->getTranslation('heading5', $lang)) }}" required>
@@ -160,7 +122,6 @@
                 <div class="form-group row">
                     <label class="col-md-2 col-form-label" for="signinSrEmail">
                         Icon 1
-                        {{-- <small>(107x107)</small> --}}
                     </label>
                     <div class="col-md-10">
                         <div class="input-group" data-toggle="aizuploader" data-type="image">
@@ -201,7 +162,6 @@
                 <div class="form-group row">
                     <label class="col-md-2 col-form-label" for="signinSrEmail">
                         Icon 2
-                        {{-- <small>(107x107)</small> --}}
                     </label>
                     <div class="col-md-10">
                         <div class="input-group" data-toggle="aizuploader" data-type="image">
@@ -244,7 +204,6 @@
                 <div class="form-group row">
                     <label class="col-md-2 col-form-label" for="signinSrEmail">
                         Icon 3
-                        {{-- <small>(107x107)</small> --}}
                     </label>
                     <div class="col-md-10">
                         <div class="input-group" data-toggle="aizuploader" data-type="image">
@@ -287,7 +246,6 @@
                 <div class="form-group row">
                     <label class="col-md-2 col-form-label" for="signinSrEmail">
                         Icon 4
-                        {{-- <small>(107x107)</small> --}}
                     </label>
                     <div class="col-md-10">
                         <div class="input-group" data-toggle="aizuploader" data-type="image">
@@ -411,6 +369,28 @@
                 const editor = $('.aiz-text-editor').next('.note-editor').find('.note-editable');
                 editor.attr('dir', isRtl ? 'rtl' : 'ltr'); // Set direction
                 editor.css('text-align', isRtl ? 'right' : 'left');
+            }
+        });
+    </script>
+
+    <script>
+        document.querySelector('input[name="image"]').addEventListener('change', function(event) {
+            const fileInput = event.target;
+            const previewBox = fileInput.closest('.form-group').querySelector('.file-preview');
+            const files = fileInput.files;
+
+            if (files && files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewBox.innerHTML = `
+                    <div class="d-flex justify-content-between align-items-center mt-2 file-preview-item">
+                        <div class="align-items-center align-self-stretch d-flex justify-content-center thumb">
+                            <img src="${e.target.result}" class="img-fit">
+                        </div>
+                    </div>
+                `;
+                }
+                reader.readAsDataURL(files[0]);
             }
         });
     </script>
