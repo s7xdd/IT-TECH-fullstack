@@ -44,28 +44,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label class="col-md-3 col-form-label" for="signinSrEmail">
-                                Mobile Banner
-                            </label>
-                            <div class="col-md-9">
-                                <div class="input-group" data-toggle="aizuploader" data-type="image">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text bg-soft-secondary font-weight-medium">
-                                            Browse
-                                        </div>
-                                    </div>
-                                    <div class="form-control file-amount">Choose File</div>
-                                    <input value="{{ old('mobile_banner') }}" type="hidden" name="mobile_banner"
-                                        class="selected-files" required>
-                                </div>
-                                <div class="file-preview box sm">
-                                </div>
-                                @error('mobile_banner')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        </div>
 
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Video Upload</label>
