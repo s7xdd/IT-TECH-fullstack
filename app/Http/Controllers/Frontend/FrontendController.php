@@ -117,47 +117,21 @@ class FrontendController extends Controller
 
         $data['slider'] = HomeSlider::where('status', 1)->orderBy('sort_order', 'asc')->get();
 
-        $data['home_categories'] = Cache::rememberForever('home_categories', function () {
-            $categories = get_setting('home_categories');
-            if ($categories) {
-                $details = Category::whereIn('id', json_decode($categories))->where('is_active', 1)
-                    ->get();
-                return $details;
-            }
-        });
+        $data['home_categories'] = Category::whereIn('id', json_decode(get_setting('home_categories')))->where('is_active', 1)
+            ->get();
 
-        $data['home_products'] = Cache::remember('home_products', 3600, function () {
-            $product_ids = get_setting('home_products');
-            if ($product_ids) {
-                $products =  Product::where('published', 1)->whereIn('id', json_decode($product_ids))->with('brand')->get();
-                return $products;
-            }
-        });
+        $data['home_products'] = Product::where('published', 1)->whereIn('id', json_decode(get_setting('home_products')))->with('brand')->get();
 
-        $data['home_services'] = Cache::remember('home_services', 3600, function () {
-            $service_ids = get_setting('home_services');
-            if ($service_ids) {
-                $services =  Service::where('status', 1)->whereIn('id', json_decode($service_ids))->orderBy('sort_order', 'asc')->get();
-                return $services;
-            }
-        });
+        $data['home_services'] = Service::where('status', 1)->whereIn('id', json_decode(get_setting('home_services')))->orderBy('sort_order', 'asc')->get();
 
-        $data['partners'] = Cache::rememberForever('partners', function () {
-            $partners = Partners::where('status', 1)->orderBy('sort_order', 'asc')->get();
-            return $partners;
-        });
+        $data['partners'] = Partners::where('status', 1)->orderBy('sort_order', 'asc')->get();
 
-        $data['testimonials'] = Cache::rememberForever('home_testimonials', function () {
-            $testimonials = Testimonials::where('status', 1)->orderBy('sort_order', 'asc')->get();
-            return $testimonials;
-        });
+        $data['testimonials'] = Testimonials::where('status', 1)->orderBy('sort_order', 'asc')->get();
 
-        $data['blogs'] = Cache::rememberForever('home_blogs', function () {
-            $details = Blog::where('status', 1)->orderBy('blog_date', 'desc')->limit(5)->get();
-            return $details;
-        });
+        $data['blogs'] = Blog::where('status', 1)->orderBy('blog_date', 'desc')->limit(5)->get();
 
         $data['tutorials'] = Tutorial::where('status', 1)->orderBy('tutorial_date', 'desc')->limit(5)->get();
+
         // return view('frontend.home',compact('page','data','lang'));
 
         // return response()->json([
