@@ -45,7 +45,7 @@
                        <div class="relative z-10 flex flex-col justify-between h-full">
                            <div class="mb-6">
                                <img src="{{ uploaded_asset($service['icon']) }}" alt="Digital Transformation Icon"
-                                   class="h-20 aspect-auto mb-4 transition-colors duration-300 group-hover:invert group-hover:brightness-0 group-hover:contrast-200">
+                                   class="h-20 aspect-auto mb-4 transition-colors duration-300">
                            </div>
                            <div
                                class="absolute -bottom-16 group-hover:bottom-0 transition-all duration-300 text-[--dark] group-hover:text-white">
