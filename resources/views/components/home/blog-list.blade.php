@@ -45,7 +45,8 @@
                   <div class="absolute top-6 left-6 right-6 z-10">
                       <div class="text-gray-200 text-sm mb-2">
                           {{ \Carbon\Carbon::parse($blogSectionOne['blog_date'])->format('j F Y') }}</div>
-                      <a href="{{ route('blog.details', $blogSectionOne['slug']) }}" class="text-white text-2xl font-semibold mb-4 leading-snug">
+                      <a href="{{ route('blog.details', $blogSectionOne['slug']) }}"
+                          class="text-white text-2xl font-semibold mb-4 leading-snug">
                           {{ $blogSectionOne['name'] }}
                       </a>
 
@@ -70,7 +71,8 @@
                           <div class="absolute top-6 left-6 right-6 z-10">
                               <div class="text-gray-200 text-sm mb-2">
                                   {{ \Carbon\Carbon::parse($blog['blog_date'])->format('j F Y') }}</div>
-                              <a href="{{ route('blog.details', $blog['slug']) }}" class="text-white text-lg font-semibold mb-4 leading-snug line-clamp-3">
+                              <a href="{{ route('blog.details', $blog['slug']) }}"
+                                  class="text-white text-lg font-semibold mb-4 leading-snug line-clamp-3">
                                   {{ $blog['name'] }}
                               </a>
                           </div>
@@ -87,31 +89,34 @@
                       </div>
                   @endforeach
 
-                  <div class="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-0 bg-gray-500 overflow-hidden group">
-                      @foreach ($blogSectionThree as $blog)
-                          <div class="bg-blue-900 text-white flex flex-col justify-between p-8">
-                              <div>
-                                  <div class="text-gray-200 text-sm mb-2">
-                                      {{ \Carbon\Carbon::parse($blog['blog_date'])->format('j F Y') }}</div>
-                                  <a href="{{ route('blog.details', $blog['slug']) }}" class="text-xl font-semibold mb-4 leading-snug">
-                                      {{ $blog['name'] }}
+                  @if ($blogsSectionTwo->count() > 0)
+                      <div class="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-0 bg-gray-500 overflow-hidden group">
+                          @foreach ($blogSectionThree as $blog)
+                              <div class="bg-blue-900 text-white flex flex-col justify-between p-8">
+                                  <div>
+                                      <div class="text-gray-200 text-sm mb-2">
+                                          {{ \Carbon\Carbon::parse($blog['blog_date'])->format('j F Y') }}</div>
+                                      <a href="{{ route('blog.details', $blog['slug']) }}"
+                                          class="text-xl font-semibold mb-4 leading-snug">
+                                          {{ $blog['name'] }}
+                                      </a>
+                                  </div>
+                                  <a href="{{ route('blog.details', $blog['slug']) }}"
+                                      class="self-end border border-white transform scale-100 group-hover:scale-110 duration-300 group-hover:bg-white rounded-full p-2 transition">
+                                      <svg xmlns="http://www.w3.org/2000/svg"
+                                          class="h-5 w-5 text-white group-hover:text-black duration-300" fill="none"
+                                          viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M9 5l7 7-7 7" />
+                                      </svg>
                                   </a>
                               </div>
-                              <a href="{{ route('blog.details', $blog['slug']) }}"
-                                  class="self-end border border-white transform scale-100 group-hover:scale-110 duration-300 group-hover:bg-white rounded-full p-2 transition">
-                                  <svg xmlns="http://www.w3.org/2000/svg"
-                                      class="h-5 w-5 text-white group-hover:text-black duration-300" fill="none"
-                                      viewBox="0 0 24 24" stroke="currentColor">
-                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M9 5l7 7-7 7" />
-                                  </svg>
-                              </a>
-                          </div>
-                          <img src="{{ uploaded_asset($blog['image']) }}" alt="Expanding IT Footprint"
-                              class="w-full h-full object-cover aspect-square md:block rounded-r-xl max-h-[200px] sm:max-h-full">
-                      @endforeach
+                              <img src="{{ uploaded_asset($blog['image']) }}" alt="Expanding IT Footprint"
+                                  class="w-full h-full object-cover aspect-square md:block rounded-r-xl max-h-[200px] sm:max-h-full">
+                          @endforeach
 
-                  </div>
+                      </div>
+                  @endif
 
               </div>
           </div>
