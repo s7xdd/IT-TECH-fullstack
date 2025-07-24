@@ -45,9 +45,9 @@
                   <div class="absolute top-6 left-6 right-6 z-10">
                       <div class="text-gray-200 text-sm mb-2">
                           {{ \Carbon\Carbon::parse($blogSectionOne['blog_date'])->format('j F Y') }}</div>
-                      <div class="text-white text-2xl font-semibold mb-4 leading-snug">
+                      <a href="{{ route('blog.details', $blogSectionOne['slug']) }}" class="text-white text-2xl font-semibold mb-4 leading-snug">
                           {{ $blogSectionOne['name'] }}
-                      </div>
+                      </a>
 
                   </div>
                   <a href="{{ route('blog.details', $blogSectionOne['slug']) }}"
@@ -70,9 +70,9 @@
                           <div class="absolute top-6 left-6 right-6 z-10">
                               <div class="text-gray-200 text-sm mb-2">
                                   {{ \Carbon\Carbon::parse($blog['blog_date'])->format('j F Y') }}</div>
-                              <div class="text-white text-lg font-semibold mb-4 leading-snug line-clamp-3">
+                              <a href="{{ route('blog.details', $blog['slug']) }}" class="text-white text-lg font-semibold mb-4 leading-snug line-clamp-3">
                                   {{ $blog['name'] }}
-                              </div>
+                              </a>
                           </div>
 
                           <a href="{{ route('blog.details', $blog['slug']) }}"
@@ -93,9 +93,9 @@
                               <div>
                                   <div class="text-gray-200 text-sm mb-2">
                                       {{ \Carbon\Carbon::parse($blog['blog_date'])->format('j F Y') }}</div>
-                                  <div class="text-xl font-semibold mb-4 leading-snug">
+                                  <a href="{{ route('blog.details', $blog['slug']) }}" class="text-xl font-semibold mb-4 leading-snug">
                                       {{ $blog['name'] }}
-                                  </div>
+                                  </a>
                               </div>
                               <a href="{{ route('blog.details', $blog['slug']) }}"
                                   class="self-end border border-white transform scale-100 group-hover:scale-110 duration-300 group-hover:bg-white rounded-full p-2 transition">

@@ -50,7 +50,7 @@
                            <div
                                class="absolute -bottom-16 group-hover:bottom-0 transition-all duration-300 text-[--dark] group-hover:text-white">
                                <a href="{{ route('services.show', ['slug' => $service['slug']]) }}"
-                                   class="text-[22px] font-[--aspekta] font-normal group-hover:underline leading-7 underline-offset-4 block">
+                                   class="text-[22px] font-[--aspekta] font-normal  leading-7 underline-offset-4 block">
                                    {{ $service->getTranslation('name', $lang) }}
                                </a>
                                <p

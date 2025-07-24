@@ -12,7 +12,7 @@
     <section class="py-16 px-6 sm:py-20 md:px-6 lg:px-0 md:py-24 lg:py-24 xl:py-24 relative z-10 mt-[84px]">
         <div class="flex lg:w-5/6 mx-auto">
             <div class="max-w-xl">
-                <span class="bg-gray-200 rounded-full py-2 px-3">Service Overview</span>
+                <span class="bg-gray-200 rounded-full py-2 px-3">{{ $page->getTranslation('title', $lang) }}</span>
                 <h1 class="responsive-heading my-4">
 
                     @php
@@ -65,7 +65,7 @@
                     <div class="lg:w-5/6 mx-auto">
 
                         <div class="max-w-lg mb-8">
-                            <h2 class="responsive-heading mb-4">What’s Included in Our
+                            <h2 class="responsive-heading mb-4">{{ $page->getTranslation('title1', $lang) }}
                                 {{ $service->getTranslation('name', $lang) }} Services?
                             </h2>
                         </div>
@@ -144,7 +144,7 @@
     <section class="py-16 px-6 ...">
         <div class="lg:w-5/6 mx-auto">
             <div class="max-w-4xl mx-auto relative">
-                <h1 class="text-4xl text-gray-900 mb-10">Frequently asked questions.</h1>
+                <h1 class="text-4xl text-gray-900 mb-10">{{ $page->getTranslation('heading2', $lang) }}</h1>
                 <div class="space-y-6">
                     @forelse ($faq_categories[0]->faq_list as $faq)
                         <div class="border-b border-gray-200 pb-6">
@@ -174,7 +174,15 @@
         <div class="lg:w-5/6 mx-auto">
 
             <div class="max-w-lg mb-8">
-                <h2 class="responsive-heading mb-4 capitalize">Other <span class="text-sky-400">Services</span>.
+                <h2 class="responsive-heading mb-4 capitalize">
+
+                    @php
+                        $text = $page->getTranslation('title2', $lang);
+                        $formattedText = preg_replace('/\[(.*?)\]/', '<span class="text-sky-400">$1</span>', $text);
+                    @endphp
+                    {!! $formattedText !!}
+
+                    </span>
                 </h2>
             </div>
 

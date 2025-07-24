@@ -3,7 +3,7 @@
             <h2 id="about-title"
                 class="text-4xl md:text-[52px] leading-[40px] md:leading-[50px] lg:leading-[58px] text-center font-normal text-gray-800 mb-4">
                 @php
-                    $text = $page->getTranslation('heading5', $lang); 
+                    $text = $page->getTranslation('heading5', $lang);
                     $formattedText = preg_replace('/\[(.*?)\]/', '<span class="text-sky-400">$1</span>', $text);
                 @endphp
 
@@ -13,10 +13,10 @@
                 class="max-w-4xl mx-auto font-light font-[--aspekta] text-center text-gray-600 text-base sm:text-lg md:text-xl mb-10">
                 {{ $page->getTranslation('heading6', $lang) }}
             </p>
-            <button
+            <a href="{{ route('about-us') }}"
                 class="bg-transparent transition-all duration-150 text-base sm:text-lg border border-[--dark] text-[--dark] px-6 py-3 sm:px-6 sm:py-4 rounded-full  hover:text-white hover:bg-[--primary] hover:shadow-lg hover:-translate-y-1 w-auto sm:w-auto z-10">
                 Learn More
-            </button>
+            </a>
         </div>
 
         <img id="about-bg-img" src="assets/img/about-bg.png"

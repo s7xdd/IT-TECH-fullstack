@@ -29,22 +29,21 @@
                                    <img src="{{ uploaded_asset($tutorial['image']) }}" alt="Tutorial Image"
                                        class="w-full object-cover aspect-square">
                                    <div
-                                       class="p-6 flex-1 flex flex-col max-h-[100px] w-full transform transition duration-200 group-hover:-translate-y-20 bg-white">
-                                       <a
-                                           class=" text-gray-800 mb-5 underline-offset-2 text-[22px] font-[--aspekta] font-normal group-hover:underline leading-7 block cursor-pointer">
+                                       class="p-6 flex-1 flex flex-col max-h-[130px] w-full transform transition duration-200 group-hover:-translate-y-20 bg-white">
+                                       <a href="{{ route('tutorial.details', $tutorial['slug']) }}"
+                                           class=" text-gray-800 mb-5  underline-offset-2 text-[22px] font-[--aspekta] font-normal   leading-7 block cursor-pointer">
                                            {{ $tutorial['name'] }}
                                        </a>
-                                       <button
+                                       <a href="{{ route('tutorial.details', $tutorial['slug']) }}"
                                            class="mt-auto border border-[--dark] rounded-full px-6 py-3 text-[--dark] hover:bg-[--primary] transition hover:text-white hover:border-[--primary] w-max opacity-0 group-hover:opacity-100">
                                            Learn More
-                                       </button>
+                                       </a href="{{ route('tutorial.details', $tutorial['slug']) }}">
                                    </div>
                                </div>
                            @endforeach
 
 
                        </div>
-                       <!-- Swiper navigation -->
                        <button
                            class="swiper-button-prev !left-0 !top-1/2 !-translate-y-1/2 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center absolute z-10">
 
