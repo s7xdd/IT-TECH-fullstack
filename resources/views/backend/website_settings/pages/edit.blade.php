@@ -22,21 +22,13 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-from-label" for="name">Heading 1 </label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="Heading 1" name="title"
-                            value="{{ $page->getTranslation('title', $lang) }}">
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-sm-2 col-from-label" for="name">Heading 2 </label>
-                    <div class="col-sm-10">
                         <input type="text" class="form-control" placeholder="Heading 2" name="title1"
                             value="{{ $page->getTranslation('title1', $lang) }}">
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-sm-2 col-from-label" for="name">Heading 3 </label>
+                    <label class="col-sm-2 col-from-label" for="name">Heading 2 </label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" placeholder="Heading 3" name="heading2"
                             value="{{ $page->getTranslation('heading2', $lang) }}">
@@ -44,7 +36,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-sm-2 col-from-label" for="name">Heading 4 </label>
+                    <label class="col-sm-2 col-from-label" for="name">Heading 3 </label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" placeholder="Heading 4" name="title2"
                             value="{{ $page->getTranslation('title2', $lang) }}">
@@ -52,7 +44,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-sm-2 col-from-label" for="name">Heading 5</label>
+                    <label class="col-sm-2 col-from-label" for="name">Heading 4</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" placeholder="Heading 5" name="heading3"
                             value="{{ $page->getTranslation('heading3', $lang) }}">
@@ -60,7 +52,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-sm-2 col-from-label" for="name">Heading 6 </label>
+                    <label class="col-sm-2 col-from-label" for="name">Heading 5 </label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" placeholder="Heading 6" name="title3"
                             value="{{ $page->getTranslation('title3', $lang) }}">

@@ -12,7 +12,7 @@
     <section class="py-16 px-6 sm:py-20 md:px-6 lg:px-0 md:py-24 lg:py-24 xl:py-24 relative z-10 mt-[84px]">
         <div class="flex lg:w-5/6 mx-auto">
             <div class="max-w-xl">
-                <span class="bg-gray-200 rounded-full py-2 px-3">{{ $page->getTranslation('title', $lang) }}</span>
+                <span class="bg-gray-200 rounded-full py-2 px-3">Our Services</span>
                 <h1 class="responsive-heading my-4">
 
                     @php
