@@ -120,11 +120,6 @@ class FrontendController extends Controller
             ->whereIn('id', json_decode(get_setting('home_categories') ?? '[]'))
             ->get();
 
-        $data['home_products'] = Product::where('published', 1)
-            ->whereIn('id', json_decode(get_setting('home_products') ?? '[]'))
-            ->with('brand')
-            ->get();
-
         $data['home_services'] = Service::where('status', 1)
             ->whereIn('id', json_decode(get_setting('home_services') ?? '[]'))
             ->orderBy('sort_order', 'asc')
