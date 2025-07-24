@@ -118,10 +118,10 @@
         @endforeach
 
         <li>
-            <button
+            <a href="{{ route('contact') }}"
                 class="bg-white text-[--dark] px-8 py-4 font-normal hover:bg-gray-100 rounded-full transition-all duration-300 text-lg">
                 Get Started
-            </button>
+            </a>
         </li>
     </ul>
 </div>
