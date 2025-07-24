@@ -167,7 +167,6 @@ class FrontendController extends Controller
 
         return view('pages.home', [
             'slider' => $data['slider'],
-            'products' => $data['home_products'],
             'services' => $data['home_services'],
             'categories' => $data['home_categories'],
             'partners' => $data['partners'],
