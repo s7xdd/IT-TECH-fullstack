@@ -77,7 +77,7 @@
 
         <div class="flex justify-end">
             <a href="{{ route('contact') }}" id="header-btn"
-                class="bg-white text-[--dark] px-6 py-3 font-normal hover:bg-gray-100 rounded-full transition-all duration-300">
+                class="bg-white text-white px-6 py-3 font-normal hover:bg-gray-100 rounded-full transition-all duration-300">
                 Get Started
             </a>
 

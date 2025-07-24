@@ -54,11 +54,11 @@
                        </button>
                    </div>
                    <div class="flex justify-center mt-10">
-                       <button
+                       <a href="{{ route('tutorial.index') }}"
                            class="bg-transparent relative group overflow-hidden transition-all duration-150 text-base sm:text-lg border border-[--dark] text-[--dark] px-6 py-3 sm:px-10 sm:py-4 rounded-full hover:bg-[--primary] hover:text-white hover:shadow-lg hover:-translate-y-1 w-auto sm:w-auto">
                            <!-- <span class="absolute bg-[--primary] translate-y-11 left-0 group-hover:-translate-y-4 transform transition-all duration-150 w-full h-full rounded-full"></span> -->
                            <span class="">View All</span>
-                       </button>
+                       </a>
                    </div>
                </div>
            </div>
