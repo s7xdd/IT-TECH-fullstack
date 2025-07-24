@@ -45,10 +45,6 @@
                 <form action="{{ route('business_settings.update') }}" method="POST" enctype="multipart/form-data">
                     <div class="card-body py-3">
                         @csrf
-                        <input type="hidden" name="types[]" value="why_choose_us">
-                        <input type="hidden" name="types[]" value="why_choose_us_title">
-                        <input type="hidden" name="types[]" value="why_choose_us_subtitle">
-
                         @for ($i = 1; $i <= 6; $i++)
                             <input type="hidden" name="types[]" value="why_choose_us_title{{ $i }}">
                             <input type="hidden" name="types[]" value="why_choose_us_subtitle{{ $i }}">
