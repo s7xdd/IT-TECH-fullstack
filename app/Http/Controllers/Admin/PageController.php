@@ -105,7 +105,6 @@ class PageController extends Controller
 
             $categories = Category::where('parent_id', 0)->where('is_active',1)->with('childrenCategories')->get();
 
-            $products = Product::select('id', 'name')->where('published',1)->get();
             $brands = Brand::where('is_active',1)->orderBy('name', 'asc')->get();
             $services = Service::where('status',1)->orderBy('name', 'asc')->get();
 
