@@ -44,13 +44,6 @@
                         </div>
                         <div class="h-0.5 bg-gray-200 w-full"></div>
                         <div class="flex flex-col">
-                            <span class="text-gray-400">Join growing team?</span>
-                            <a href="mailto:join@domain.com"
-                                class="text-gray-600 hover:text-[--dark] text-xl hover:underline underline-offset-1">
-                                {{ $page->getTranslation('heading5', $lang) }}</a>
-                        </div>
-                        <div class="h-0.5 bg-gray-200 w-full"></div>
-                        <div class="flex flex-col">
                             <span class="text-gray-400">Visit headquarters?</span>
                             <a href="{{ $page->getTranslation('content1', $lang) }}"
                                 class="text-gray-600 hover:text-[--dark] text-xl hover:underline underline-offset-1">View on
