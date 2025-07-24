@@ -108,7 +108,7 @@ class PageController extends Controller
             $brands = Brand::where('is_active',1)->orderBy('name', 'asc')->get();
             $services = Service::where('status',1)->orderBy('name', 'asc')->get();
 
-            return view('backend.website_settings.pages.home_page_edit', compact('page', 'services', 'categories', 'brands', 'products', 'lang','page_id'));
+            return view('backend.website_settings.pages.home_page_edit', compact('page', 'services', 'categories', 'brands', 'lang','page_id'));
 
           }
           else if ($id == 'blogs' || $id == 'product_list' || $id == 'service_list' || $id == 'tutorials') {
