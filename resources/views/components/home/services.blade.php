@@ -21,7 +21,7 @@
                        <p class="font-light font-[--aspekta] text-gray-600 text-base sm:text-lg md:text-xl mb-10">
                            {{ $page->getTranslation('heading4', $lang) }}
                        </p>
-                       <a href={{ route('services.show') }}
+                       <a href={{ route('services.index') }}
                            class="text-[--primary] text-[22px] font-[--aspekta] hover:underline">
                            {{ $page->getTranslation('heading8', $lang) }}
                        </a>
