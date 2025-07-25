@@ -95,19 +95,18 @@
                         page: page
                     },
                     beforeSend: function() {
-                        $('#loading-indicator').show(); // Show loading icon
+                        $('#loading-indicator').show();
                     },
                     success: function(response) {
                         if (response.html) {
-                            // Append new blogs to the existing blog container
                             document.getElementById('tutorial-container').innerHTML += response.html;
                         } else {
-                            hasMoreData = false; // No more data, stop further requests
-                            $('#no-more-data').show(); // Show a message if needed
+                            hasMoreData = false;
+                            $('#no-more-data').show();
                         }
                     },
                     complete: function() {
-                        $('#loading-indicator').hide(); // Hide loading icon
+                        $('#loading-indicator').hide();
                     }
                 });
             }
