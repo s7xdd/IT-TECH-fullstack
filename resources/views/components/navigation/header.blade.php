@@ -34,12 +34,12 @@
                             </a>
 
                             <div id="dropdownDelay"
-                                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
-                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44">
+                                <ul class="py-2 text-sm text-gray-700"
                                     aria-labelledby="dropdownLargeButton">
                                     @foreach ($services as $service)
                                         <li
-                                            class="px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors rounded-md flex items-center justify-center">
+                                            class="px-4 py-2 hover:bg-gray-50 transition-colors rounded-md flex items-center justify-center">
                                             <a href="{{ route('services.show', $service->slug) }}"
                                                 class="flex items-center justify-center">
                                                 {{-- <img src="{{ uploaded_asset($service['icon']) }}"
