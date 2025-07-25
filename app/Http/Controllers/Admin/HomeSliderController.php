@@ -108,9 +108,7 @@ class HomeSliderController extends Controller
                 Storage::disk('public')->delete($homeSlider->video_file);
             }
             $updateData['video_file'] = null;
-        }
-
-        if ($request->hasFile('video_file')) {
+        } else if ($request->hasFile('video_file')) {
             if ($homeSlider->video_file && Storage::disk('public')->exists($homeSlider->video_file)) {
                 Storage::disk('public')->delete($homeSlider->video_file);
             }
