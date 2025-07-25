@@ -148,6 +148,7 @@ class PageController extends Controller
                 $page->save();
             }
 
+            $page->image               = $request->has('image') ? $request->image : NULL;
             $page->image1               = $request->has('image1') ? $request->image1 : NULL;
             $page->image2               = $request->has('image2') ? $request->image2 : NULL;
             $page->image3               = $request->has('image3') ? $request->image3 : NULL;
