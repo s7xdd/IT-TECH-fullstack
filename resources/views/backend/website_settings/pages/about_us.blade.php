@@ -51,20 +51,26 @@
                     </div>
                 </div>
 
-                <div class="form-group row @if ($lang != 'en') d-none @endif">
-                    <label class="col-md-2 col-form-label" for="signinSrEmail">{{ trans('messages.image') }}</label>
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label" for="signinSrEmail">
+                     {{ trans('messages.image') }}
+                    </label>
                     <div class="col-md-10">
-                        <input type="file" name="image" class="form-control selected-files" accept="image/*">
-
-                        <div class="file-preview box sm">
-                            @if ($page->image)
-                                <div class="d-flex justify-content-between align-items-center mt-2 file-preview-item">
-                                    <div class="align-items-center align-self-stretch d-flex justify-content-center thumb">
-                                        <img src="{{ asset($page->image) }}" class="img-fit">
-                                    </div>
+                        <div class="input-group" data-toggle="aizuploader" data-type="image">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text bg-soft-secondary font-weight-medium">
+                                    Browse
                                 </div>
-                            @endif
+                            </div>
+                            <div class="form-control file-amount">Choose File</div>
+                            <input value="{{ old('image', $page->image) }}" type="hidden" name="image"
+                                class="selected-files" required>
                         </div>
+                        <div class="file-preview box sm">
+                        </div>
+                        @error('image')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
 

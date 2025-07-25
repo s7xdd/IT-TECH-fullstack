@@ -26,7 +26,7 @@
         <div class="flex flex-col lg:flex-row items-center lg:w-5/6 mx-auto gap-12">
             <div class="w-full lg:w-1/2 px-10">
                 <div class="w-full bg-gray-200 h-[400px] mx-auto">
-                    <img src="{{ asset($page->image) }}" alt="About Us Image"
+                    <img src="{{ uploaded_asset($page->image) }}" alt="About Us Image"
                         class="w-full h-full object-cover">
                 </div>
             </div>
