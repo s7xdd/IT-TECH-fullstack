@@ -6,7 +6,8 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" type="image/svg" href="{{ asset('assets/img/favicon.png') }}">
+    <link rel="icon" type="image/svg" href="{{ get_setting('site_icon') }}">
+    <link rel="canonical" href="{{ url()->current() }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,22 +40,6 @@
         .text-danger {
             color: red;
         }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 999;
-            background-color: #25d366;
-            padding: 10px;
-            border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        .whatsapp-float img {
-            width: 40px;
-            height: 40px;
-        }
     </style>
 </head>
 
@@ -68,11 +53,6 @@
 
 
     @include('components.navigation.footer')
-
-    {{-- <a href="https://wa.me/{{ get_setting('default_service_whatsapp') }}" class="whatsapp-float" target="_blank"
-        rel="noopener">
-        <img src="{{ asset('assets/images/whatsapp.png') }}" alt="WhatsApp Chat" />
-    </a> --}}
 
     <div class="circle" id="cursorCircle"></div>
 

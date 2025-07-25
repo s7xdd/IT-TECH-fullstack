@@ -45,7 +45,7 @@
                        class="group hover:bg-[--primary] bg-white text-white p-8 flex flex-col justify-between min-h-[340px] h-full relative transition-all duration-300 overflow-hidden border border-gray-800">
                        <div class="relative z-10 flex flex-col justify-between h-full">
                            <div class="mb-6">
-                               <img src="{{ uploaded_asset($service['icon']) }}" alt="Digital Transformation Icon"
+                               <img src="{{ uploaded_asset($service['icon']) }}" alt={{ $service->getTranslation('name', $lang) }}
                                    class="h-20 aspect-auto mb-4 transition-colors duration-300 group-hover:invert group-hover:brightness-0 group-hover:contrast-20">
                            </div>
                            <div

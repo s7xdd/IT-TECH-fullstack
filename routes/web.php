@@ -14,7 +14,7 @@ Route::get('/load-more-services', [FrontendController::class, 'loadMoreService']
 
 Route::get('/news/', [FrontendController::class, 'blogs'])->name('blog');
 Route::get('/load-more-blogs', [FrontendController::class, 'loadMoreBlogs'])->name('blog.loadMore');
-Route::get('/blog/{slug}', [FrontendController::class, 'showBlog'])->name('blog.details');
+Route::get('/news/{slug}', [FrontendController::class, 'showBlog'])->name('blog.details');
 
 Route::get('/generate-slug', [CategoryController::class, 'generateSlug'])->name('generate-slug');
 

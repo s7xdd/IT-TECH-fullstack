@@ -24,10 +24,10 @@
                 <p class="font-light font-[--aspekta] text-gray-600 text-xl mb-10">
                     {{ $page->getTranslation('sub_title', $lang) }}
                 </p>
-                <button
+                {{-- <button
                     class="bg-transparent transition-all duration-150 text-base sm:text-lg border border-[--dark] text-[--dark] px-6 py-3 sm:px-10 sm:py-4 rounded-full  hover:text-white hover:bg-[--primary] hover:hover:-translate-y-1 w-auto sm:w-auto z-10">
                     View All
-                </button>
+                </button> --}}
             </div>
             <div>
 

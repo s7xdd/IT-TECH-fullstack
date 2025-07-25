@@ -49,7 +49,7 @@
       <div
           class="lg:w-5/6 mx-auto border-t border-gray-200 py-8 flex flex-col xl:flex-row md:justify-between items-center text-gray-500 text-base">
           <div class="text-center xl:text-left">
-              &copy; 2025 IT & Tech. All Rights Reserved. <a href="https://tomsher.com" target="_blank" rel="noopener noreferrer">Tomsher</a>
+              &copy; "© 2025 – All rights reserved to IT & Tech | Website by <a href="https://tomsher.com" target="_blank" rel="noopener noreferrer">Tomsher</a>
           </div>
 
           <div class="flex gap-6 mt-2 md:mt-0">

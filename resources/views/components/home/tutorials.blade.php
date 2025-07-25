@@ -26,7 +26,7 @@
                            @foreach ($tutorials as $tutorial)
                                <div
                                    class="swiper-slide flex flex-col bg-white overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-3 group">
-                                   <img src="{{ uploaded_asset($tutorial['image']) }}" alt="Tutorial Image"
+                                   <img src="{{ uploaded_asset($tutorial['image']) }}" alt= {{ $tutorial['name'] }}
                                        class="w-full object-cover aspect-square">
                                    <div
                                        class="p-6 flex-1 flex flex-col max-h-[130px] w-full transform transition duration-200 group-hover:-translate-y-20 bg-white">

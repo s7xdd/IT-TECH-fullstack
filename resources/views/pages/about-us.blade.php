@@ -36,10 +36,10 @@
                     {{ $page->getTranslation('content', $lang) }}
                 </p>
 
-                <button
+                <a href="{{ route('services.index') }}"
                     class="bg-transparent transition-all duration-150 text-base sm:text-lg border border-white text-white px-6 py-3 sm:px-6 sm:py-4 rounded-full hover:bg-white hover:text-blue-800 w-auto sm:w-auto hover:shadow-lg hover:-translate-y-1">
                     Our Services
-                </button>
+                </a >
 
             </div>
 

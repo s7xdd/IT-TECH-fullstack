@@ -20,6 +20,6 @@
         </div>
 
         <img id="about-bg-img" src="assets/img/about-bg.png"
-            class="absolute bottom-0 left-0 right-0 transition-opacity duration-700" alt="">
+            class="absolute bottom-0 left-0 right-0 transition-opacity duration-700" alt="About image">
 
     </section>

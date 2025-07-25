@@ -73,7 +73,7 @@
                             <label for="email" class="block text-white mb-1">Email Address*</label>
                             <input type="email" id="email" name="email" placeholder="Enter your email address"
                                 required
-                                class="w-full border-b border-gray-300 bg-transparent py-4 px-0 focus:outline-none focus:border-[--primary] text-white mb-2 pr-12"
+                                class="w-full border-b border-gray-300 bg-transparent py-4 px-0 focus:outline-none focus:border-white text-white mb-2 pr-12"
                                 value="{{ old('email') }}">
                             @error('email')
                                 <div class="text-red-600">{{ $message }}</div>
@@ -81,9 +81,9 @@
                         </div>
 
                         <div class="relative">
-                            <label for="message" class="block text-white mb-1">Your Message</label>
+                            <label for="message" class="block text-white mb-1">Your Message*</label>
                             <textarea id="message" name="message" rows="5" placeholder="Describe about your project" required minlength="10"
-                                class="w-full border-b border-gray-300 bg-transparent py-4 px-0 focus:outline-none focus:border-[--primary] text-white mb-2 pr-12">{{ old('message') }}</textarea>
+                                class="w-full border-b border-gray-300 bg-transparent py-4 px-0 focus:outline-none focus:border-white text-white mb-2 pr-12">{{ old('message') }}</textarea>
                             @error('message')
                                 <div class="text-red-600">{{ $message }}</div>
                             @enderror

@@ -23,7 +23,7 @@
                   </p>
               </div>
               <div class="mt-6 md:mt-0">
-                  <a href="{{ route('blog.index') }}"
+                  <a href="/news"
                       class="bg-transparent transition-all duration-150 text-base sm:text-lg border border-[--dark] text-[--dark] px-6 py-3 sm:px-10 sm:py-4 rounded-full  hover:text-white hover:bg-[--primary] hover:shadow-lg hover:-translate-y-1 w-auto sm:w-auto z-10">
                       View All
                   </a>
@@ -39,7 +39,7 @@
 
               @endphp
               <div class="w-full lg:w-3/6 bg-gray-500 relative group">
-                  <img src="{{ uploaded_asset($blogSectionOne['image']) }}" alt="Empowering Digital Growth"
+                  <img src="{{ uploaded_asset($blogSectionOne['image']) }}" alt={{ $blogSectionOne['name'] }}
                       class="w-full h-full object-cover shadow-lg transform  max-h-[400px] lg:max-h-full">
                   <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-xl"></div>
                   <div class="absolute top-6 left-6 right-6 z-10">
@@ -65,7 +65,7 @@
 
                   @foreach ($blogsSectionTwo as $blog)
                       <div class="relative bg-gray-500 aspect-square overflow-hidden group ">
-                          <img src="{{ uploaded_asset($blog['image']) }}" alt="Cybersecurity Focus"
+                          <img src="{{ uploaded_asset($blog['image']) }}" alt={{ $blog['name'] }}
                               class="w-full h-full aspect-square object-cover shadow-lg">
                           <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                           <div class="absolute top-6 left-6 right-6 z-10">
@@ -111,7 +111,7 @@
                                       </svg>
                                   </a>
                               </div>
-                              <img src="{{ uploaded_asset($blog['image']) }}" alt="Expanding IT Footprint"
+                              <img src="{{ uploaded_asset($blog['image']) }}" alt= {{ $blog['name'] }}
                                   class="w-full h-full object-cover aspect-square md:block rounded-r-xl max-h-[200px] sm:max-h-full">
                           @endforeach
 
