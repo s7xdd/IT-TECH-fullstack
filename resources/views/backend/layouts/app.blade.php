@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg" href="{{ get_setting('site_icon') }}">
+    <link rel="icon" type="image/png" href="{{ get_setting('site_icon') }}">
 
     <title>@yield('title', env('APP_NAME'))</title>
     <!-- google font -->
