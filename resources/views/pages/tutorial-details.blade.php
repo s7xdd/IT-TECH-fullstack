@@ -38,8 +38,7 @@
                     <img src="{{ uploaded_asset($tutorial->image) }}" alt="{{ $tutorial->name }}"
                         class="w-full h-full object-cover h-[400px] lg:h-[560px]">
 
-                    <div
-                        class="space-y-8 text-2xl leading-relaxed text-gray-700 mt-12 lg:mt-16 xl:mt-20 max-w-full">
+                    <div class="space-y-8 text-2xl leading-relaxed text-gray-700 mt-12 lg:mt-16 xl:mt-20 max-w-full">
                         {!! $tutorial->description !!}
                     </div>
 
@@ -50,10 +49,9 @@
         <section class="bg-[#f4f9ff] py-16 px-6 sm:py-20 md:px-6 lg:px-0 md:py-24 lg:py-24 xl:py-24">
             <div class="lg:w-5/6 mx-auto">
                 <div class="max-w-lg">
-                    <h2 class="responsive-heading mb-4">Recommended Tutorials</h2>
+                    <h2 class="responsive-heading mb-4">{{ $page->getTranslation('title', $lang) }}</h2>
                     <p class="font-light font-[--aspekta] text-gray-600 text-xl mb-10">
-                        Stay updated with our latest articles, industry insights, and expert tips to keep your business
-                        informed and inspired.
+                        {{ $page->getTranslation('heading2', $lang) }}
                     </p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -62,6 +60,8 @@
                         <div
                             class="bg-white p-5 hover:shadow-lg hover:-translate-y-3 duration-300 group border border-[--dark]">
                             <div class="bg-gray-200 h-[250px]">
+                                <img src="{{ uploaded_asset($post->image) }}" class="h-[250px] w-full object-cover"
+                                    alt="news" />
 
                             </div>
                             <div class="mt-6 mb-3">

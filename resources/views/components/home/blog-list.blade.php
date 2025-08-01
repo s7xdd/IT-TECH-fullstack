@@ -5,7 +5,7 @@
                   <h2 class="responsive-heading leading-tight text-gray-800 mb-4">
 
                       @php
-                          $text = $page->getTranslation('title2', $lang);
+                          $text = $page->getTranslation('heading9', $lang);
                           $words = explode(' ', $text);
 
                           $formattedText = preg_replace(

@@ -372,7 +372,10 @@ class FrontendController extends Controller
         $next = Blog::where('id', '>', $blogs->id)->where('status', 1)
             ->orderBy('blog_date', 'asc')
             ->first();
-        return view('pages.blog-details', ['blog' => $blogs, 'lang' => $lang, 'recentBlogs' => $recentBlogs, 'previousBlog' => $previous, 'nextBlog' => $next]);
+
+        $page = Page::where('type', 'blog_details')->first();
+
+        return view('pages.blog-details', ['blog' => $blogs, 'lang' => $lang, 'recentBlogs' => $recentBlogs, 'previousBlog' => $previous, 'nextBlog' => $next, 'page' => $page]);
     }
 
     public function showTutorial($slug)
@@ -405,7 +408,10 @@ class FrontendController extends Controller
         $next = Tutorial::where('id', '>', $tutorials->id)->where('status', 1)
             ->orderBy('tutorial_date', 'asc')
             ->first();
-        return view('pages.tutorial-details', ['tutorial' => $tutorials, 'lang' => $lang, 'recentTutorials' => $recentTutorials, 'previousTutorial' => $previous, 'nextTutorial' => $next]);
+
+        $page = Page::where('type', 'tutorial_details')->first();
+
+        return view('pages.tutorial-details', ['tutorial' => $tutorials, 'lang' => $lang, 'page' => $page, 'recentTutorials' => $recentTutorials, 'previousTutorial' => $previous, 'nextTutorial' => $next]);
     }
 
     public function terms()
