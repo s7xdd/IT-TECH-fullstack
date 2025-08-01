@@ -55,7 +55,7 @@
                                 {{ $post->name }}
                             </span>
                             <p class="mb-5 text-xl hover:underline underline-offset-2">
-                                <a href="news-detail.html">
+                                <a href="{{ route('blog.details', ['slug' => $post->slug]) }}">
                                     {{ Str::limit(strip_tags($post->description), 80, '...') }}
                                 </a>
                             </p>

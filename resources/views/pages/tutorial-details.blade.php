@@ -69,11 +69,11 @@
                                     {{ $post->name }}
                                 </span>
                                 <p class="mb-5 text-xl hover:underline underline-offset-2">
-                                    <a href="news-detail.html">
+                                    <a href="{{ route('tutorial.details', ['slug' => $post->slug]) }}">
                                         {{ Str::limit(strip_tags($post->description), 80, '...') }}
                                     </a>
                                 </p>
-                                <a href="{{ route('blog.details', ['slug' => $post->slug]) }}"
+                                <a href="{{ route('tutorial.details', ['slug' => $post->slug]) }}"
                                     class="mt-auto border border-black rounded-full px-6 py-3 text-[--dark] group-hover:bg-[--primary] group-hover:border-[--primary] group-hover:text-white transition w-max group-hover:opacity-100 hover:shadow-lg">
                                     Learn More
                                 </a>
