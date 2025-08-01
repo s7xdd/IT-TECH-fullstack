@@ -213,7 +213,7 @@ function resizeHeroWrapper() {
         minHeight: 400,
         maxHeight: 1000,
 
-        heroFont: { min: 15, max: 75 },
+        heroFont: { min: 26, max: 75 },
         heroLine: { min: 28, max: 75 },
 
         sectionFont: { min: 32, max: 45 },

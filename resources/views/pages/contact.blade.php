@@ -89,7 +89,7 @@
                             @enderror
                         </div>
 
-                        <div class="flex items-center justify-start gap-6">
+                        <div class="flex flex-col md:flex-row items-center justify-start gap-6">
                             <button
                                 class="bg-white whitespace-nowrap text-base sm:text-lg text-[--dark] px-6 py-3 sm:px-6 sm:py-4 rounded-full hover:bg-gray-100 w-full sm:w-auto">
                                 Get Started

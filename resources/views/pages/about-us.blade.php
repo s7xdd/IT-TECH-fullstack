@@ -24,7 +24,7 @@
 
     <section class="py-16 px-6 sm:py-20 md:px-6 lg:px-0 md:py-24 lg:py-24 xl:py-24 relative z-10 bg-[--primary]">
         <div class="flex flex-col lg:flex-row items-center lg:w-5/6 mx-auto gap-12">
-            <div class="w-full lg:w-1/2 px-10">
+            <div class="w-full lg:w-1/2">
                 <div class="w-full bg-gray-200 h-[400px] mx-auto">
                     <img src="{{ uploaded_asset($page->image) }}" alt="About Us Image"
                         class="w-full h-full object-cover">
@@ -101,7 +101,7 @@
                 @endphp
                 @foreach ($headings as $i => $heading)
                     <div
-                        class="bg-gray-100 h-full flex flex-col justify-between items-start p-8 min-h-[270px] col-span-2 sm:col-span-1">
+                        class="bg-gray-100 h-full flex flex-col justify-start items-start p-8 min-h-[270px] col-span-2 sm:col-span-1">
                         <img src="{{ uploaded_asset($icons[$i]) }}" alt="icon {{ $i + 1 }}" class="w-10 h-10 mb-4">
                         <div>
                             <h4 class="text-xl mb-2">{{ $headings[$i] }}</h4>

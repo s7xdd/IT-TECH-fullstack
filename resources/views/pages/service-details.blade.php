@@ -38,8 +38,8 @@
 
     <section class="bg-[--primary] py-16 px-6 sm:py-20 md:px-6 lg:px-0 md:py-24 lg:py-24 xl:py-24">
         <div class="lg:w-5/6 mx-auto ">
-            <div class="flex flex-col lg:flex-row items-start justify-center gap-2 lg:gap-24 mb-10">
-                <div class="max-w-lg min-w-[300px]">
+            <div class="flex flex-col lg:flex-col xl:flex-row items-start justify-center gap-2 lg:gap-5 xl:gap-24 mb-10">
+                <div class="max-w-lg min-w-[100%] xl:min-w-[300px]">
                     <h2 class="responsive-heading mb-4 capitalize text-white">
                         {{ $service->getTranslation('short_description', $lang) }}
                     </h2>
@@ -59,9 +59,9 @@
     </section>
 
     <section class=" py-16 px-6 sm:py-20 md:px-6 lg:px-0 md:py-24 lg:py-24 xl:py-24">
-        <div class="lg:w-5/6 mx-auto">
+        <div class="w-full mx-auto">
             <div class="grid grid-cols-1 gap-3">
-                <section class=" py-16 px-6 sm:py-20 md:px-6 lg:px-0 md:py-24 lg:py-24 xl:py-24">
+                <section class=" py-16 px-6 sm:py-20 md:px-6 lg:px-0 md:py-24 lg:py-24 xl:py-24 !pt-0">
                     <div class="lg:w-5/6 mx-auto">
 
                         <div class="max-w-lg mb-8">

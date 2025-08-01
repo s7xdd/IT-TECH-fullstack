@@ -1,7 +1,7 @@
    <section class="z-60 bg-white py-16 px-6 sm:py-20 md:px-6 lg:px-0 md:py-24 lg:py-24 xl:py-24">
        <div class="lg:w-5/6 mx-auto">
            <div class="flex relative">
-               <div class="flex flex-col md:flex-row items-start md:items-center gap-10 w-full md:w-[60%] lg:w-[40%]">
+               <div class="flex flex-col md:flex-row items-start md:items-center gap-10 w-full md:w-[100%] lg:w-[40%] xl:w-[40%]">
                    <div class="max-w-full max-lg:max-w-xl">
 
                        <h2 class="responsive-heading leading-tight text-gray-800 mb-4">
@@ -55,7 +55,7 @@
                                    {{ $service->getTranslation('name', $lang) }}
                                </a>
                                <p
-                                   class="opacity-0 font-light text-base sm:text-lg group-hover:opacity-100 font-[--aspekta] transition-opacity duration-300 mt-3">
+                                   class="opacity-0 font-light text-base sm:text-lg group-hover:opacity-100 font-[--aspekta] transition-opacity duration-300 mt-3 min-h-[84px]">
                                    {{ $service->getTranslation('short_description', $lang) }}
                                </p>
                            </div>

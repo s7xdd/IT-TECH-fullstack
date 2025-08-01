@@ -2,7 +2,7 @@
         class="flex-grow flex flex-col text-center h-[740px] min-[560px]:h-[760px] min-[768px]:h-[800px] min-[1024px]:h-[930px] min-[1200px]:h-[920px] min-[1300px]:h-[1000px] min-[1600px]:h-[1080px] bg-[--primary] !overflow-hidden relative banner-area">
 
         <div
-            class="w-[70%] content-wrapper text-center absolute z-10 top-[30%] space-y-3 xl:space-y-5 transition-all duration-150 left-1/2 -translate-x-1/2 transform -translate-y-1/2 hero-wrapper">
+            class="w-[90%] xl:w-[70%] content-wrapper text-center absolute z-10 top-[25%] md:top-[30%] space-y-3 xl:space-y-5 transition-all duration-150 left-1/2 -translate-x-1/2 transform -translate-y-1/2 hero-wrapper">
             <h1 id="heroText" class="font-medium gradient-text">
                 @php
                     $text = $page->getTranslation('title', $lang);
@@ -14,7 +14,7 @@
             </h1>
 
             <p
-                class="max-w-xl xl:max-w-2xl mx-auto text-center text-[18px] font-[--aspekta] font-light text-white opacity-70">
+                class="text-sm max-w-xl xl:max-w-2xl mx-auto text-center text-[18px] font-[--aspekta] font-light text-white opacity-70">
                 {{ $page->getTranslation('sub_title', $lang) }}
             </p>
 
@@ -357,6 +357,9 @@
                         slidesPerView: 2.2
                     },
                     1024: {
+                        slidesPerView: 2.2
+                    },
+                         1200: {
                         slidesPerView: 3.2
                     }
                 },

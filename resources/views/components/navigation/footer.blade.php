@@ -1,5 +1,5 @@
   <footer class="bg-white lg:px-0 px-6">
-      <div class="lg:w-5/6 mx-auto pb-10 pt-16 flex gap-6 flex-wrap">
+      <div class="lg:w-5/6 mx-auto pb-10 pt-16 flex gap-16 flex-wrap">
           <div class="flex flex-col items-start gap-4 w-full xl:w-[200px] mb-4">
               <img src={{ uploaded_asset(get_setting('footer_logo')) }} alt="IT & Tech Logo" class="h-16 w-auto mb-2">
           </div>
@@ -52,7 +52,7 @@
               &copy; "© 2025 – All rights reserved to IT & Tech | Website by <a href="https://tomsher.com" target="_blank" rel="noopener noreferrer">Tomsher</a>
           </div>
 
-          <div class="flex gap-6 mt-2 md:mt-0">
+          <div class="flex gap-6 mt-4 md:mt-0">
               @if (isset($bottom_footer) && count($bottom_footer) > 0)
                   @foreach ($bottom_footer as $item)
                       <a href="{{ url($item->link) }}" class="hover:text-[--primary]">{{ $item->label }}</a>

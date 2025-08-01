@@ -1,6 +1,6 @@
   <section class="bg-white py-16 px-6 sm:py-20 md:px-6 lg:px-0 md:py-24 lg:py-24 xl:py-24">
       <div class="lg:w-5/6 mx-auto">
-          <div class="flex flex-col gap-2 md:flex-row md:items-end md:justify-between mb-12">
+          <div class="flex flex-col flex-wrap xl:flex-nowrap gap-2 md:flex-row md:items-end md:justify-between mb-12">
               <div>
                   <h2 class="responsive-heading leading-tight text-gray-800 mb-4">
 
@@ -22,9 +22,9 @@
                       {{ $page->getTranslation('content5', $lang) }}
                   </p>
               </div>
-              <div class="mt-6 md:mt-0">
+              <div class="mt-4 xl:mt-0">
                   <a href="/news"
-                      class="bg-transparent transition-all duration-150 text-base sm:text-lg border border-[--dark] text-[--dark] px-6 py-3 sm:px-10 sm:py-4 rounded-full  hover:text-white hover:bg-[--primary] hover:shadow-lg hover:-translate-y-1 w-auto sm:w-auto z-10">
+                      class="bg-transparent block transition-all duration-150 text-base sm:text-lg border border-[--dark] text-[--dark] px-6 py-3 sm:px-10 sm:py-4 rounded-full  hover:text-white hover:bg-[--primary] hover:shadow-lg hover:-translate-y-1 w-auto sm:w-auto z-10">
                       View All
                   </a>
               </div>
@@ -40,13 +40,14 @@
               @endphp
               <div class="w-full lg:w-3/6 bg-gray-500 relative group">
                   <img src="{{ uploaded_asset($blogSectionOne['image']) }}" alt={{ $blogSectionOne['name'] }}
-                      class="w-full h-full object-cover shadow-lg transform  max-h-[400px] lg:max-h-full">
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-xl"></div>
+                      class="w-full h-[300px] xl:h-full object-cover shadow-lg transform  max-h-[400px] lg:max-h-full">
+              <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-transparent rounded-xl"></div>
+
                   <div class="absolute top-6 left-6 right-6 z-10">
                       <div class="text-gray-200 text-sm mb-2">
                           {{ \Carbon\Carbon::parse($blogSectionOne['blog_date'])->format('j F Y') }}</div>
                       <a href="{{ route('blog.details', $blogSectionOne['slug']) }}"
-                          class="text-white text-2xl font-semibold mb-4 leading-snug">
+                          class="text-white text-md xl:text-2xl font-semibold mb-4 leading-snug">
                           {{ $blogSectionOne['name'] }}
                       </a>
 
@@ -61,7 +62,7 @@
                   </a>
               </div>
 
-              <div class="grid grid-cols-2 gap-4 w-full lg:w-3/6 relative">
+              <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 gap-x-0 w-full lg:w-3/6 relative">
 
                   @foreach ($blogsSectionTwo as $blog)
                       <div class="relative bg-gray-500 aspect-square overflow-hidden group ">

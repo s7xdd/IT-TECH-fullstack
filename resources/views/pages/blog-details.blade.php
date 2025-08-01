@@ -25,7 +25,7 @@
                     class="w-full h-full object-cover h-[400px] lg:h-[560px]">
 
                 <div
-                    class="space-y-8 text-2xl leading-relaxed text-gray-700 mt-12 lg:mt-16 xl:mt-20 max-w-full lg:max-w-6xl">
+                    class="space-y-8 text-2xl leading-relaxed text-gray-700 mt-12 lg:mt-16 xl:mt-20 max-w-full">
                     {!! $blog->description !!}
                 </div>
 
