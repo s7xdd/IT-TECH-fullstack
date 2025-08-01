@@ -49,7 +49,7 @@
         <section class="bg-[#f4f9ff] py-16 px-6 sm:py-20 md:px-6 lg:px-0 md:py-24 lg:py-24 xl:py-24">
             <div class="lg:w-5/6 mx-auto">
                 <div class="max-w-lg">
-                    <h2 class="responsive-heading mb-4">{{ $page->getTranslation('title', $lang) }}</h2>
+                    <h2 class="responsive-heading mb-4">{{ $page->getTranslation('title1', $lang) }}</h2>
                     <p class="font-light font-[--aspekta] text-gray-600 text-xl mb-10">
                         {{ $page->getTranslation('heading2', $lang) }}
                     </p>
