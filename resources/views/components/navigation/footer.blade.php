@@ -52,7 +52,7 @@
               © 2025 – All rights reserved to IT & Tech | Website by <a href="https://tomsher.com" target="_blank" rel="noopener noreferrer">Tomsher</a>
           </div>
 
-          <div class="flex gap-6 mt-4 md:mt-0">
+          <div class="flex gap-6 mt-4 xl:mt-0">
               @if (isset($bottom_footer) && count($bottom_footer) > 0)
                   @foreach ($bottom_footer as $item)
                       <a href="{{ url($item->link) }}" class="hover:text-[--primary]">{{ $item->label }}</a>

@@ -313,7 +313,7 @@ document.addEventListener("mouseout", (e) => {
 });
 
 const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
+    slidesPerView: 3,
     spaceBetween: 20,
     autoplay: {
         delay: 3000, // Delay between slides (in ms)

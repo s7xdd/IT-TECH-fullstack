@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script type="module" src="{{ asset('dist/assets/app-f10b86b9.js') }}"></script>
+    <!-- <script type="module" src="{{ asset('dist/assets/app-f10b86b9.js') }}"></script> -->
     {!! SEO::generate() !!}
 
     <link
@@ -30,6 +30,8 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet" />
 
     @yield('style')
+
+    @vite(['resources/js/app.js'])
 
 
     <style>
@@ -59,7 +61,6 @@
 
     @yield('script')
 
-    <script src="{{ asset('assets/js/script.js') }}"></script>
     <script src="{{ asset('assets/js/scroll.js') }}"></script>
 
     <script>

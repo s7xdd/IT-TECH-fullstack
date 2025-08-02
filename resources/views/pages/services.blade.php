@@ -59,8 +59,8 @@
                                     d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
                             </svg>
                         </div>
-                        <h3 class="text-2xl text-gray-800 mb-2">{{ $service->name }}</h3>
-                        <p class="text-gray-500 text-base font-normal mb-6 leading-tight">
+                        <h3 class="text-2xl text-gray-800 mb-2 md:min-h-[54px] lg:min-h-[68px] xl:min-h-max">{{ $service->name }}</h3>
+                        <p class="text-gray-500 text-base font-normal mb-6 leading-tight md:min-h-[68px] lg:min-h-[100px] xl:min-h-[60px]">
                             {{ $service->getTranslation('short_description', $lang) }}
                         </p>
                         <ul class="space-y-3 text-base text-gray-700 mb-5">

@@ -58,10 +58,10 @@
         </div>
     </section>
 
-    <section class=" py-16 px-6 sm:py-20 md:px-6 lg:px-0 md:py-24 lg:py-24 xl:py-24">
+    <section class=" py-16 px-6 sm:py-20 md:px-6 lg:px-0 md:py-24 lg:py-24 xl:py-24 ">
         <div class="w-full mx-auto">
             <div class="grid grid-cols-1 gap-3">
-                <section class=" py-16 px-6 sm:py-20 md:px-6 lg:px-0 md:py-24 lg:py-24 xl:py-24 !pt-0">
+                <section class=" py-16 px-6 sm:py-20 md:px-6 lg:px-0 md:py-24 lg:py-24 xl:py-0">
                     <div class="lg:w-5/6 mx-auto">
 
                         <div class="max-w-lg mb-8">
@@ -136,8 +136,10 @@
                             </div>
                         @endif
                     @endfor
-                    <div class="swiper-pagination mt-8 relative"></div>
+                         
                 </div>
+                <div class="swiper-pagination mt-8 relative"></div>
+        
             </div>
     </section>
 
@@ -200,8 +202,8 @@
                                     d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
                             </svg>
                         </div>
-                        <h3 class="text-2xl text-gray-800 mb-2">{{ $service->name }}</h3>
-                        <p class="text-gray-500 text-base font-normal mb-6 leading-tight">
+                        <h3 class="text-2xl text-gray-800 mb-2 md:min-h-[54px] lg:min-h-[68px] xl:min-h-max">{{ $service->name }}</h3>
+                        <p class="text-gray-500 text-base font-normal mb-6 leading-tight md:min-h-[68px] lg:min-h-[100px] xl:min-h-[60px]">
                             {{ $service->getTranslation('short_description', $lang) }}
                         </p>
                         <ul class="space-y-3 text-base text-gray-700 mb-5">

@@ -24,13 +24,13 @@
               </div>
               <div class="mt-4 xl:mt-0">
                   <a href="/news"
-                      class="bg-transparent block transition-all duration-150 text-base sm:text-lg border border-[--dark] text-[--dark] px-6 py-3 sm:px-10 sm:py-4 rounded-full  hover:text-white hover:bg-[--primary] hover:shadow-lg hover:-translate-y-1 w-auto sm:w-auto z-10">
+                      class="bg-transparent inline-block transition-all duration-150 text-base sm:text-lg border border-[--dark] text-[--dark] px-6 py-3 sm:px-10 sm:py-4 rounded-full  hover:text-white hover:bg-[--primary] hover:shadow-lg hover:-translate-y-1 w-auto sm:w-auto z-10">
                       View All
                   </a>
               </div>
           </div>
 
-          <div class="flex flex-col lg:flex-row gap-4">
+          <div class="flex flex-col lg:flex-col xl:flex-row gap-4">
 
               @php
                   $blogSectionOne = $blogs->first();
@@ -38,7 +38,7 @@
                   $blogSectionThree = $blogs->skip(3)->take(1);
 
               @endphp
-              <div class="w-full lg:w-3/6 bg-gray-500 relative group">
+              <div class="w-full lg:w-3/3 xl:w-3/6 bg-gray-500 relative group">
                   <img src="{{ uploaded_asset($blogSectionOne['image']) }}" alt={{ $blogSectionOne['name'] }}
                       class="w-full h-[300px] xl:h-full object-cover shadow-lg transform  max-h-[400px] lg:max-h-full">
               <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-transparent rounded-xl"></div>
@@ -53,16 +53,16 @@
 
                   </div>
                   <a href="{{ route('blog.details', $blogSectionOne['slug']) }}"
-                      class="absolute scale-100 group-hover:scale-110 duration-300 bottom-10 right-10 border border-white group-hover:bg-white hover:text-black rounded-full p-3 transition group">
+                      class="absolute scale-100 group-hover:scale-110 duration-300 bottom-8 right-5 xl:bottom-8 xl:right-8 border border-white group-hover:bg-white hover:text-black rounded-full p-2 transition group">
                       <svg xmlns="http://www.w3.org/2000/svg"
-                          class="h-6 w-6 text-white group-hover:text-black duration-300" fill="none"
+                          class="h-5 w-5 text-white group-hover:text-black duration-300" fill="none"
                           viewBox="0 0 24 24" stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                       </svg>
                   </a>
               </div>
 
-              <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 gap-x-0 w-full lg:w-3/6 relative">
+              <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 gap-x-0 w-full lg:w-3/3 xl:w-3/6 relative">
 
                   @foreach ($blogsSectionTwo as $blog)
                       <div class="relative bg-gray-500 aspect-square overflow-hidden group ">
